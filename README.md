@@ -1,10 +1,5 @@
 - 👋 Hi, I’m Matt (@BuenVia)
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
-
-<!---
-BuenVia/BuenVia is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+- 👀 I’m interested in Web Development, Web Applications and first becoming a Front-End Dev before going Full-Stack!
+- 🌱 I’m currently learning JavaScript, PHP as well as improving my HTML and CSS knowledge.
+- 💞️ I’m looking to collaborate on anything and everything!
+- 📫 How to reach me - matt@buenvia.com
