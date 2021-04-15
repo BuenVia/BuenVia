@@ -1,5 +1,5 @@
 - 👋 Hi, I’m Matt (@BuenVia)
 - 👀 I’m interested in Web Development, Web Applications and first becoming a Front-End Dev before going Full-Stack!
-- 🌱 I’m currently learning JavaScript, PHP as well as improving my HTML and CSS knowledge.
+- 🌱 I’m currently learning JavaScript, PHP, Python as well as improving my HTML and CSS knowledge.
 - 💞️ I’m looking to collaborate on anything and everything!
 - 📫 How to reach me - matt@buenvia.com
