@@ -1,0 +1,9 @@
+:root {
+    --bkg: rgb(30, 30, 30);
+    --txt: rgb(220, 220, 220)
+}
+
+body {
+    background-color: var(--bkg);
+    color: var(--txt);
+}
