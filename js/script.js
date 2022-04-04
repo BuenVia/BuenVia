@@ -25,14 +25,14 @@ moduleBtn.forEach(button => {
 })
 
 // Uses dataset to select activity type
-activityBtn.forEach(button => {
-    button.addEventListener('click', () => {
-        activity = button.dataset.activity
-        moduleContainer.style.display = 'none'
-        activityContainer.style.display = 'block'
-        activityDisplay()
-    })
-})
+// activityBtn.forEach(button => {
+//     button.addEventListener('click', () => {
+//         activity = button.dataset.activity
+//         moduleContainer.style.display = 'none'
+//         activityContainer.style.display = 'block'
+//         activityDisplay()
+//     })
+// })
 
 // Uses Fetch API to pull words from a JSON file
 function getWords() {
@@ -51,8 +51,28 @@ function activityDisplay() {
 
     let i = 0
     while(i < words.length) {
-        console.log(words[i].english);
+        activityTitle.innerHTML += `<br>${words[i].english} -> ${words[i].spanish}`
         i++
     }
-    console.log(words);
+}
+
+// Use AJAX to load activity HTML
+function loadWriting() {
+    const xhr = new XMLHttpRequest()
+    xhr.onload = function() {
+        if(xhr.status === 200) {
+            activityContainer.innerHTML = xhr.responseText
+        }
+    }
+    xhr.open('GET', 'activities/writing.html', true)
+    xhr.send(null)
+
+        moduleContainer.style.display = 'none'
+        activityContainer.style.display = 'block'
+}
+
+// Writing practice logic
+function writingPractice() {
+    const phrase = document.getElementById('phrase')
+    phrase.innerText = words[0].english
 }
