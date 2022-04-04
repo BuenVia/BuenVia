@@ -1,19 +1,20 @@
 {
-    "intro": [{
-        "one": "hello",
-        "two": "my name is",
-        "three" : "nice to meet you"
-    }],
+    "intro": [
+        { "english": "hello", "spanish": "hola" },
+        { "english": "my name is", "spanish": "me llamo" },
+        { "english": "nice to meet you", "spanish": "encantado de conocerle" }
 
-    "useful": [{
-        "one": "goodbye",
-        "two": "please",
-        "three" : "thank you"
-    }],
+    ],
+
+    "useful": [
+        { "english": "goodbye", "spanish": "adios" },
+        { "english": "please", "spanish": "por favor" },
+        { "english": "thank you", "spanish": "gracias" }
+    ],
     
-    "be": [{
-        "one": "I am",
-        "two": "you are",
-        "three" : "he/ she/ it/ is"
-    }]
+    "be": [
+        { "english": "I am", "spanish": "soy" },
+        { "english": "you are", "spanish": "eres" },
+        { "english": "he/ she/ it/ is", "spanish": "es" }
+    ]
 }

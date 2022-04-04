@@ -8,8 +8,10 @@ const activityTitle = document.getElementById('activityTitle')
 
 const moduleTitle = document.getElementById('moduleTitle')
 
+let words
 let module, activity
 
+// Uses dataset to select module depending on which button user clicks
 moduleBtn.forEach(button => {
     button.addEventListener('click', () => {
         module = button.dataset.module
@@ -17,34 +19,40 @@ moduleBtn.forEach(button => {
         buttonContainer.style.display = 'none'
         moduleContainer.style.display = 'block'
         console.log(module);
+        getWords()
         
     })
 })
 
+// Uses dataset to select activity type
 activityBtn.forEach(button => {
     button.addEventListener('click', () => {
         activity = button.dataset.activity
         moduleContainer.style.display = 'none'
         activityContainer.style.display = 'block'
         activityDisplay()
-        console.log(module, activity);
     })
 })
 
-function activityDisplay() {
-    activityTitle.innerText += `${module} = ${activity}`
+// Uses Fetch API to pull words from a JSON file
+function getWords() {
+    fetch('http://127.0.0.1:5500/BuenVia/js/wordbank.json')
+    .then(response => response.json())
+    .then(data => list(data))
+    .catch(err => console.log('Error with Fetch'))
 }
 
-fetch('http://127.0.0.1:5500/BuenVia/js/wordbank.json')
-.then(response => response.json())
-.then(data => list(data))
-.catch(err => console.log(err))
-
 function list(data) {
-    const val = Object.values(data)
+    words = data[module];
+}
+
+function activityDisplay() {
+    activityTitle.innerText += `${module} = ${activity}`
+
     let i = 0
-    while(i < val.length) {
-        console.log(val[i]);
-        i++    
+    while(i < words.length) {
+        console.log(words[i].english);
+        i++
     }
+    console.log(words);
 }
