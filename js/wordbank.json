@@ -1,0 +1,19 @@
+{
+    "intro": [{
+        "one": "hello",
+        "two": "my name is",
+        "three" : "nice to meet you"
+    }],
+
+    "useful": [{
+        "one": "goodbye",
+        "two": "please",
+        "three" : "thank you"
+    }],
+    
+    "be": [{
+        "one": "I am",
+        "two": "you are",
+        "three" : "he/ she/ it/ is"
+    }]
+}

@@ -6,14 +6,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/script.js" type="module"></script>
     <title>Document</title>
+
+    <style>
+        .button-container {
+            margin: 1rem;
+            display: block;
+            border: 1px solid black;
+        }
+
+        .module-container {
+            margin: 1rem;
+            display: none;
+            border: 1px solid black;
+        }
+
+        .activity-container {
+            margin: 1rem;
+            display: none;
+            border: 1px solid black;
+        }
+    </style>
 </head>
 <body>
     
-    <a href="javascript:void(0)" data-tab="home">Home</a>
-    <a href="javascript:void(0)" data-tab="about">About</a>
-    <a href="javascript:void(0)" data-tab="contact">Contact</a>
+    <nav>
+        <h1>BuenVia</h1>
+    </nav>
 
-    <div id="app"></div>
+    <!--Select Module-->
+    <div class="button-container" id="buttonContainer">
+        <button data-module="intro">Intro</button>
+        <button data-module="useful">Useful Words</buton>
+        <button data-module="be">To be</button>
+    </div>
+
+    <!--Select Activity based on Selected Module-->
+    <div class="module-container" id="moduleContainer">
+        <h3>Module title = <span id="moduleTitle">($module)</span></h3>
+        <div class="module-card">
+            <button data-activity="lesson">Lesson</button>
+        </div>
+        <div class="module-card">
+            <button data-activity="writing">Writing</button>
+        </div>
+        <div class="module-card">
+            <button data-activity="listening">Listening</button>
+        </div>
+        <div class="module-card">
+            <button data-activity="test">Test</button>
+        </div>
+    </div>
+
+    <!--Display Activity based on Selected Module-->
+    <div class="activity-container" id="activityContainer">
+        <h3 id="activityTitle"></h3>
+
+        <!--Lesson-->
+
+        <!--Writing-->
+
+        <!--Listening-->
+
+        <!--Test-->
+
+    </div>
 
 </body>
 </html>
