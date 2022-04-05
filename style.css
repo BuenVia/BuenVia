@@ -1,0 +1,97 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: rgb(0, 102, 102);
+}
+
+.full-height-grow {
+    display: flex;
+    flex-direction: column;
+}
+
+/*HEADER*/
+.header-title-container {
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 3px solid rgb(224, 224, 224);
+}
+
+.header-title {
+    text-align: center;
+    color: rgb(224, 224, 224);
+    font-weight: bolder;
+    font-size: 52px;
+}
+
+/*MAIN BODY*/
+main {
+    flex-grow: 1;
+}
+
+.course-container {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(200, 200, 200);
+}
+
+.button-container {
+    margin: 1rem;
+    padding: 1rem;
+    width: 70%;
+    display: block;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 1rem;
+}
+
+.module-btn {
+    padding: 2rem;
+    margin: 1rem;
+    width: 40%;
+    background-color: transparent;
+    color: rgb(200, 200, 200);
+    border: 3px solid rgb(200, 200, 200);
+    border-radius: 1rem;
+    outline: none;
+    cursor: pointer;
+}
+
+.module-btn:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 4px 5px black;
+    transition: 300ms;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.module-container {
+    margin: 1rem;
+    padding: 1rem;
+    width: 70%;
+    display: none;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 1rem;
+}
+
+.activity-btn {
+    
+}
+
+.activity-container {
+    margin: 1rem;
+    display: none;
+    border: 1px solid black;
+}
+
+/*FOOTER*/

@@ -4,72 +4,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <script src="js/script.js" defer></script>
-    <title>Document</title>
-
-    <style>
-        .button-container {
-            margin: 1rem;
-            display: block;
-            border: 1px solid black;
-        }
-
-        .module-container {
-            margin: 1rem;
-            display: none;
-            border: 1px solid black;
-        }
-
-        .activity-container {
-            margin: 1rem;
-            display: none;
-            border: 1px solid black;
-        }
-    </style>
+    <title>BuenVia</title>
 </head>
-<body>
+<body class="full-height-grow ">
     
-    <nav>
-        <h1>BuenVia</h1>
-    </nav>
+    <header>
+        <div class="header-title-container">
+            <h1 class="header-title">BuenVia</h1>
+        </div>
+    </header>
 
-    <!--Select Module-->
-    <div class="button-container" id="buttonContainer">
-        <button data-module="intro">Intro</button>
-        <button data-module="useful">Useful Words</buton>
-        <button data-module="be">To be</button>
+    <main>
+        <!--Select Module-->
+        <div class="course-container">
+            <div class="course-detail-container">
+                <p>Welcome! Please select your topic from the list below.</p>
+            </div>
+            <div class="button-container" id="buttonContainer">
+                <div class="row">
+                    <button class="module-btn" data-module="intro">Introduce yourself</button>
+                </div>
+                <div class="row">
+                    <button class="module-btn" data-module="useful">Useful Words</buton>
+                    <button class="module-btn" data-module="pronouns">Pronouns</button>
+                </div>
+                <div class="row">
+                    <button class="module-btn" data-module="be">Verb: To be</button>
+                    <button class="module-btn" data-module="useful">Describe yourself</buton>
+                </div>
+            </div>
+
+        <!--Select Activity based on Selected Module-->
+        <div class="module-container" id="moduleContainer">
+            <h3>Module title = <span id="moduleTitle">($module)</span></h3>
+            <div class="module-card">
+                <button class="activity-btn" data-activity="lesson">Lesson</button>
+            </div>
+            <div class="module-card">
+                <button class="activity-btn" data-activity="writing" onclick="loadWriting()">Writing</button>
+            </div>
+            <div class="module-card">
+                <button class="activity-btn" data-activity="listening">Listening</button>
+            </div>
+            <div class="module-card">
+                <button class="activity-btn" data-activity="test">Test</button>
+            </div>
+        </div>
+
+        <!--Display Activity based on Selected Module-->
+        <div class="activity-container" id="activityContainer">
+            <h3 id="activityTitle"></h3>
+
+            <!--Lesson-->
+
+            <!--Writing-->
+
+            <!--Listening-->
+
+            <!--Test-->
+
+        </div>
+        <!-- 
+        <footer>
+        <ul class="footer-links">
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+        </footer> -->
     </div>
+    </main>
 
-    <!--Select Activity based on Selected Module-->
-    <div class="module-container" id="moduleContainer">
-        <h3>Module title = <span id="moduleTitle">($module)</span></h3>
-        <div class="module-card">
-            <button data-activity="lesson">Lesson</button>
-        </div>
-        <div class="module-card">
-            <button data-activity="writing" onclick="loadWriting()">Writing</button>
-        </div>
-        <div class="module-card">
-            <button data-activity="listening">Listening</button>
-        </div>
-        <div class="module-card">
-            <button data-activity="test">Test</button>
-        </div>
-    </div>
-
-    <!--Display Activity based on Selected Module-->
-    <div class="activity-container" id="activityContainer">
-        <h3 id="activityTitle"></h3>
-
-        <!--Lesson-->
-
-        <!--Writing-->
-
-        <!--Listening-->
-
-        <!--Test-->
-
-    </div>
-
+ 
 </body>
 </html>
