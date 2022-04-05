@@ -76,3 +76,8 @@ function writingPractice() {
     const phrase = document.getElementById('phrase')
     phrase.innerText = words[0].english
 }
+
+//Listening practice logic
+function listeningPractice() {
+    console.log(true);
+}

@@ -17,65 +17,62 @@
     </header>
 
     <main>
-        <!--Select Module-->
-        <div class="course-container">
-            <div class="course-detail-container">
-                <p>Welcome! Please select your topic from the list below.</p>
-            </div>
-            <div class="button-container" id="buttonContainer">
-                <div class="row">
-                    <button class="module-btn" data-module="intro">Introduce yourself</button>
+        <div class="main-container">
+
+            <!--Select Module-->
+            <div class="course-container">
+                <div class="course-detail-container">
+                    <p>Welcome! Please select your topic from the list below.</p>
                 </div>
-                <div class="row">
-                    <button class="module-btn" data-module="useful">Useful Words</buton>
-                    <button class="module-btn" data-module="pronouns">Pronouns</button>
-                </div>
-                <div class="row">
-                    <button class="module-btn" data-module="be">Verb: To be</button>
-                    <button class="module-btn" data-module="useful">Describe yourself</buton>
+                <div class="button-container" id="buttonContainer">
+                    <div class="row">
+                        <button class="module-btn" data-module="intro">Introduce yourself</button>
+                    </div>
+                    <div class="row">
+                        <button class="module-btn" data-module="useful">Useful Words</buton>
+                        <button class="module-btn" data-module="pronouns">Pronouns</button>
+                    </div>
+                    <div class="row">
+                        <button class="module-btn" data-module="be">Verb: To be</button>
+                        <button class="module-btn" data-module="useful">Describe yourself</buton>
+                    </div>
                 </div>
             </div>
 
-        <!--Select Activity based on Selected Module-->
-        <div class="module-container" id="moduleContainer">
-            <h3>Module title = <span id="moduleTitle">($module)</span></h3>
-            <div class="module-card">
-                <button class="activity-btn" data-activity="lesson">Lesson</button>
+            <!--Select Activity based on Selected Module-->
+            <div class="module-container" id="moduleContainer">
+                <h3>Module title = <span id="moduleTitle">($module)</span></h3>
+                <div class="module-card">
+                    <button class="activity-btn" data-activity="lesson">Lesson</button>
+                    <button class="activity-btn" data-activity="writing" onclick="loadWriting()">Writing</button>
+                    <button class="activity-btn" data-activity="listening">Listening</button>
+                    <button class="activity-btn" data-activity="test">Test</button>
+                </div>
             </div>
-            <div class="module-card">
-                <button class="activity-btn" data-activity="writing" onclick="loadWriting()">Writing</button>
-            </div>
-            <div class="module-card">
-                <button class="activity-btn" data-activity="listening">Listening</button>
-            </div>
-            <div class="module-card">
-                <button class="activity-btn" data-activity="test">Test</button>
+
+            <!--Display Activity based on Selected Module-->
+            <div class="activity-container" id="activityContainer">
+                <h3 id="activityTitle"></h3>
+
+                    <!--Lesson-->
+
+                    <!--Writing-->
+
+                    <!--Listening-->
+
+                    <!--Test-->
+
             </div>
         </div>
+    </main>
 
-        <!--Display Activity based on Selected Module-->
-        <div class="activity-container" id="activityContainer">
-            <h3 id="activityTitle"></h3>
-
-            <!--Lesson-->
-
-            <!--Writing-->
-
-            <!--Listening-->
-
-            <!--Test-->
-
-        </div>
-        <!-- 
+            <!-- 
         <footer>
         <ul class="footer-links">
             <li>About</li>
             <li>Contact</li>
         </ul>
         </footer> -->
-    </div>
-    </main>
-
  
 </body>
 </html>
