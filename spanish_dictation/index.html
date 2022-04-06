@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container">
+        <!--Story Button Container-->
+        <div class="button-container" id="buttonContainer">
+            <h3>Choose a story</h3>
+        </div>
+    
+        <!--Display Panel Container-->
+        <div id="displayContainer">
+            <div class="details-container" id="detailsContainer"></div>
+            <div class="display-button-container">
+                <button class="playBtn" id="playBtn">Play</button>
+                <button class="playBtn" id="slowerBtn">Slower</button>
+            </div>
+            <div class="display-user-input-container">
+                <textarea class="user-input" id="userInput"></textarea>
+                <button class="playBtn" id="submitAnswerBtn">Submit</button>
+            </div>
+            <div class="answer-summary" id="answerSummary">
+                <p id="correctEl"></p>
+                <button class="next-btn" id="nextBtn">Next</button>
+            </div>
+        </div>
+
+        <!--Summary Container-->
+        <div id="summaryContainer">
+            <button class="playBtn" id="playSummaryBtn">Play Summary</button>
+            <p id="finalSummary"></p>
+            <button class="playBtn" id="finishBtn">Finish</button>
+        </div>
+
+    </div>
+
+</body>
+</html>
