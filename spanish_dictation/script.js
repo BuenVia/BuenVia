@@ -11,20 +11,20 @@ Once all sentences have been completed summary of article is shown in textbox + 
 
 const stories = [ 
     {
-        title: 'Practice One',
-        source: "Newspaper",
-        published: "01/01/2022",
-        verbatim: [ "First sentence.", 
-        "This is the second sentence.", 
-        "Finally, a third sentence." ]
+        title: 'Formal email One',
+        source: "Email",
+        published: "06/04/2022",
+        verbatim: [ "A quien corresponda", 
+        "Le escribo de parte de", 
+        "Le agradezco de antemano toda su ayuda" ]
     },
     {   
-        title: 'Practice Two',
-        source: "Magazine",
+        title: 'Formal email Two',
+        source: "Email",
         published: "31/03/2022",
-        verbatim: ["A new first sentence", 
-        "A completely different second sentence", 
-        "At last, a third sentence"] 
+        verbatim: ["Estimado Señor", 
+        "Quería saber si usted estaría disponible para hablar el miércoles", 
+        "Cualquier cosa estoy a su disposición"] 
         
     },
     {
