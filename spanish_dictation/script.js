@@ -12,7 +12,7 @@ Once all sentences have been completed summary of article is shown in textbox + 
 const stories = [ 
     {
         title: 'Formal email One',
-        source: "Email",
+        category: "Email",
         published: "06/04/2022",
         verbatim: [ "A quien corresponda", 
         "Le escribo de parte de", 
@@ -20,7 +20,7 @@ const stories = [
     },
     {   
         title: 'Formal email Two',
-        source: "Email",
+        category: "Email",
         published: "31/03/2022",
         verbatim: ["Estimado Señor", 
         "Quería saber si usted estaría disponible para hablar el miércoles", 
@@ -29,12 +29,27 @@ const stories = [
     },
     {
         title: 'Simeone, otro plan sin rematar',
-        source: "El País",
+        category: "Newspaper",
         published: "06-04-2022",
         verbatim: ["El lunes, bajo una fina lluvia", 
         "los jugadores del Manchester City", 
         "saltaron a uno de los campos de entrenamiento", 
         "del complejo anexo al Etihad Stadium"]
+    },
+    {
+        title: 'Fairytale story',
+        category: "Fairytale",
+        published: "06-04-2022",
+        verbatim: ["Érase una vez un dragón", 
+        "que vivía en la cima de una montaña"]
+    },
+    {
+        title: 'Pollito Tito',
+        category: "Fairytale",
+        published: "06-04-2022",
+        verbatim: ["Deja que te cuente una historia", 
+        "sobre un pollito", 
+        "Su nombre es Pollito Tito"]
     }
 ]
 
@@ -43,8 +58,10 @@ const displayContainer = document.getElementById('displayContainer')
 const detailsContainer = document.getElementById('detailsContainer')
 const answerSummary = document.getElementById('answerSummary')
 const summaryContainer = document.getElementById('summaryContainer')
+const searchContainer = document.getElementById('searchContainer')
 
 const userInput = document.getElementById('userInput')
+const searchInput = document.getElementById('searchInput')
 
 const playBtn = document.getElementById('playBtn')
 const slowerBtn = document.getElementById('slowerBtn')
@@ -52,6 +69,7 @@ const submitAnswerBtn = document.getElementById('submitAnswerBtn')
 const nextBtn = document.getElementById('nextBtn')
 const finishBtn = document.getElementById('finishBtn')
 const playSummaryBtn = document.getElementById('playSummaryBtn')
+const searchBtn = document.getElementById('searchBtn')
 
 const finalSummary = document.getElementById('finalSummary')
 const correctEl = document.getElementById('correctEl')
@@ -59,11 +77,15 @@ const correctEl = document.getElementById('correctEl')
 let chosenStory
 
 // For each object in the variable 'stories' a button is created.
-stories.forEach(story => {
+stories.forEach((story) => {
+    createStoryButton(story, buttonContainer)
+})
+
+function createStoryButton(story, container) {
     const button = document.createElement('button')
     button.classList.add('detailsBtn')
     button.innerText = story.title
-    buttonContainer.appendChild(button)
+    container.appendChild(button)
 
     // When clicking on the button the verbatim is assigned to the 'chosenstory' variable.
     button.addEventListener('click', () => {
@@ -72,14 +94,13 @@ stories.forEach(story => {
         displayContainer.style.display = 'block'
         const details = `
         <p id="title">Title: ${chosenStory.title}</p>
-        <p id="source">Source: ${chosenStory.source}</p>
+        <p id="source">Category: ${chosenStory.category}</p>
         <p id="date">Date Published: ${chosenStory.published}</p>
         `
         detailsContainer.innerHTML = details
         setSentence()
     })
-})
-
+}
 
 let sentenceIndex = 0
 
@@ -154,4 +175,16 @@ function playAudio(text, speed) {
     speech.rate = speed || 1
     speechSynthesis.speak(speech)
 }
+
+// Implement search function by topic using find() method
+
+let searchStory
+
+searchBtn.addEventListener('click', function(e) {
+    searchStory = stories.filter(story => story.category === searchInput.value)
+    .forEach(story => createStoryButton(story, searchContainer))
+})
+
+
+// Implement scoring (based on wrong words) and use local storage for saving previous scores
 
