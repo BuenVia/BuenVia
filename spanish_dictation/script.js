@@ -58,6 +58,7 @@ const displayContainer = document.getElementById('displayContainer')
 const detailsContainer = document.getElementById('detailsContainer')
 const answerSummary = document.getElementById('answerSummary')
 const summaryContainer = document.getElementById('summaryContainer')
+const infoContainer = document.getElementById('infoContainer') 
 const searchContainer = document.getElementById('searchContainer')
 
 const userInput = document.getElementById('userInput')
@@ -74,13 +75,15 @@ const searchBtn = document.getElementById('searchBtn')
 const finalSummary = document.getElementById('finalSummary')
 const correctEl = document.getElementById('correctEl')
 
+// DISPLAY LIST STORIES
+// For each object in the variable 'stories' a button is created.
 let chosenStory
 
-// For each object in the variable 'stories' a button is created.
 stories.forEach((story) => {
     createStoryButton(story, buttonContainer)
 })
 
+// Function which creates each story button
 function createStoryButton(story, container) {
     const button = document.createElement('button')
     button.classList.add('detailsBtn')
@@ -92,6 +95,7 @@ function createStoryButton(story, container) {
         chosenStory = story
         buttonContainer.style.display = 'none'
         displayContainer.style.display = 'block'
+        infoContainer.style.display = 'none'
         const details = `
         <p id="title">Title: ${chosenStory.title}</p>
         <p id="source">Category: ${chosenStory.category}</p>
@@ -165,8 +169,7 @@ function finish() {
     summaryContainer.style.display = 'none'
     buttonContainer.style.display = 'flex'
 }
-//AUDIO FUNCTION
-
+// AUDIO FUNCTION
 function playAudio(text, speed) {
     const speech = new SpeechSynthesisUtterance()
     if(speechSynthesis.speaking) return
@@ -176,8 +179,7 @@ function playAudio(text, speed) {
     speechSynthesis.speak(speech)
 }
 
-// Implement search function by topic using find() method
-
+// SEARCH STORY FUNCTION
 let searchStory
 
 searchBtn.addEventListener('click', function(e) {
@@ -188,3 +190,4 @@ searchBtn.addEventListener('click', function(e) {
 
 // Implement scoring (based on wrong words) and use local storage for saving previous scores
 
+//Hint function to show wrong word
