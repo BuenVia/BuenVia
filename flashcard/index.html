@@ -17,8 +17,12 @@
         <div class="dashboard container grid" id="dashboardContainer"> <!--TO BE HIDDEN-->
             <div class="container grid card">
                 <div class="container card">
-                    <div class="container">Word List</div>
-                    <div class="container">Search Word</div>
+                    <div class="container">
+                        <label for="searchWord">Search</label>
+                        <input type="text" name="searchWord">
+                        <button>Search</button>
+                    </div>
+                    <div class="container word-list" id="wordListEl">Word List</div>
                 </div>
                 <div class="container card">Create Word</div>
             </div>
@@ -40,7 +44,7 @@
         </div>  
         
         <!--FLASHCARD-->
-        <div class="flashcard container" id="flashcardContainer">
+        <div class="container hidden" id="flashcardContainer">
             <div class="container">Progress Bar</div>
             <div class="container grid">
                 <div class="container">Flashcard</div>
@@ -49,7 +53,7 @@
         </div>
         
         <!--SUMMARY-->
-        <div class="summary container grid-narrow" id="summaryContainer">
+        <div class="container hidden" id="summaryContainer">
             <div class="container">Score Summary</div>
             <div class="container grid5">
                 <div class="container">Word</div>

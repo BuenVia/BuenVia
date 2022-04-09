@@ -27,3 +27,19 @@
 .card {
     border-radius: 1rem;
 }
+
+.dashboard {
+
+}
+
+.word-list-element {
+    margin: .5rem;
+    padding: .5rem;
+    background-color: white;
+    display: flex;
+    gap: .5rem;
+}
+
+.hidden {
+    display: none;
+}

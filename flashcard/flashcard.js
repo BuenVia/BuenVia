@@ -1,32 +1,34 @@
-import { wordList } from "./wordbank.js"
+import { col } from "./wordbank.js"
 
-const wordCardContainer = document.getElementById('wordCardContainer')
+const dashboardContainer = id('dashboardContainer')
+const flashcardContainer = id('flashcardContainer')
 
-console.log(wordList);
+const wordListEl = id('wordListEl')
 
-wordList.forEach(word => {
+col.forEach((word) => {
+    const wordDiv = document.createElement('div')
+    const wordDet = document.createElement('p')
 
-    const div = document.createElement('div')
-    const h2 = document.createElement('h2')
-    const p_infin = document.createElement('p')
-    const p_form = document.createElement('p')
-    const p_pronoun = document.createElement('p')
-    const p_translation = document.createElement('p')
+    wordDet.textContent = word.category
 
-    h2.innerText = word.word
-    p_infin.innerText = `Infinitive: ${word.infinitive}`
-    p_form.innerText = `Form: ${word.form}`
-    p_pronoun.innerText = `Pronoun: ${word.pronoun}`
-    p_translation.innerText = `English: ${word.translation}`
+    wordDiv.classList.add('word-list-element')
 
-    div.appendChild(h2)
-    div.appendChild(p_infin)
-    div.appendChild(p_form)
-    div.appendChild(p_pronoun)
-    div.appendChild(p_translation)
+    wordDiv.appendChild(wordDet)
+    wordListEl.appendChild(wordDiv)
 
-    div.classList.add('word-card')
-    
-    wordCardContainer.appendChild(div)
+    //Console Log each word with its category
+    wordDiv.addEventListener('click', () => {
+        word.words.forEach(i => console.log(word.category, i))
+        openFlashcards()
+    })
+})
+
+function openFlashcards() {
+    dashboardContainer.classList.add('hidden')
+    flashcardContainer.classList.remove('hidden')
 }
-    )
+
+// Helper
+function id(id) {
+    return document.getElementById(id)
+}
