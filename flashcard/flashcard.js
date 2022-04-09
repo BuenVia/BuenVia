@@ -1,10 +1,15 @@
 import { col } from "./wordbank.js"
 
 const dashboardContainer = id('dashboardContainer')
-const flashcardContainer = id('flashcardContainer')
-
 const wordListEl = id('wordListEl')
 
+const flashcardContainer = id('flashcardContainer')
+const categoryEl = id('categoryEl')
+const wordEl = id('wordEl')
+const userInput = id('userInput')
+const userInputSubmit = id('userInputSubmit')
+
+// Shows available topics on dashboard
 col.forEach((word) => {
     const wordDiv = document.createElement('div')
     const wordDet = document.createElement('p')
@@ -19,13 +24,29 @@ col.forEach((word) => {
     //Console Log each word with its category
     wordDiv.addEventListener('click', () => {
         word.words.forEach(i => console.log(word.category, i))
-        openFlashcards()
+        dashboardContainer.classList.add('hidden')
+        flashcardContainer.classList.remove('hidden')
+        categoryEl.textContent = word.category
+        setFlashcards(word)
     })
 })
 
-function openFlashcards() {
-    dashboardContainer.classList.add('hidden')
-    flashcardContainer.classList.remove('hidden')
+let wordIndex = 0
+
+// Closes dashboard and opens flashcard
+function setFlashcards(subject) {
+    wordEl.textContent = subject.words[wordIndex].eng
+    userInputSubmit.addEventListener('click', () => {
+        checkAnswer(subject.words[wordIndex].spa)
+    })
+}
+
+function checkAnswer(subject) {
+    if(userInput.value === subject) {
+        console.log('correct');
+    } else {
+        console.log('Incorrect');
+    }
 }
 
 // Helper
