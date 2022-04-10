@@ -12,7 +12,7 @@ const nextSubmit = id('nextSubmit')
 
 const summaryContainer = id('summaryContainer')
 
-let chosenCategory, wordIndex = 0
+let chosenCategory, wordIndex = 0, wrongAnswer = []
 
 // Shows available topics on dashboard
 col.forEach((cat) => {
@@ -28,6 +28,8 @@ col.forEach((cat) => {
 
     //Console Log each word with its category
     wordDiv.addEventListener('click', () => {
+        cat.words.forEach((i) => i.correct = false)
+        console.log(cat);
         chosenCategory = cat.words
         categoryEl.textContent = `${cat.category}`
         dashboardContainer.classList.add('hidden')
@@ -37,9 +39,10 @@ col.forEach((cat) => {
 })
 
 function openFlashcard() {
+    nextSubmit.style.backgroundColor = ''
     // chosenCategory.forEach((word) => console.log(word))
     if (wordIndex < chosenCategory.length) {
-        console.log(wordIndex);
+        console.log(wordIndex, wrongAnswer);
         userInput.disabled = false
         nextSubmit.style.display = 'none'
         userInputSubmit.style.display = 'inline'
@@ -53,16 +56,26 @@ function openFlashcard() {
 
 function checkAnswer() {
     if (userInput.value) {
-        console.log(chosenCategory[wordIndex].eng, wordIndex);
-        userInput.value = ''
-        userInput.disabled = true
-        userInputSubmit.style.display = 'none'
-        nextSubmit.style.display = 'inline'
-        wordIndex++
-        nextSubmit.addEventListener('click', openFlashcard)
+        nextSubmit.style.backgroundColor = 'green'
+        resetValues()
     } else {
-        console.log('empty');
+        // Wrong answers are pushed to the 'wrongAnswer' variable for retrying again at the end
+        wrongAnswer.push(chosenCategory[wordIndex])
+        nextSubmit.style.backgroundColor = 'red'
+        resetValues()
     }
+
+}
+
+// Resets the flashcard input fields after checking the answer.
+function resetValues() {
+    console.log(chosenCategory[wordIndex].eng, wordIndex);
+    userInput.value = ''
+    userInput.disabled = true
+    userInputSubmit.style.display = 'none'
+    nextSubmit.style.display = 'inline'
+    wordIndex++
+    nextSubmit.addEventListener('click', openFlashcard)
 }
 
 // Helper
