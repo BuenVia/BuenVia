@@ -53,3 +53,5 @@ function checkAnswer(subject) {
 function id(id) {
     return document.getElementById(id)
 }
+
+console.log(true);
