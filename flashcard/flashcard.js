@@ -11,8 +11,9 @@ const userInputSubmit = id('userInputSubmit')
 const nextSubmit = id('nextSubmit')
 
 const summaryContainer = id('summaryContainer')
+const summaryGridEl = id('summaryGridEl')
 
-let chosenCategory = [], wordIndex = 0
+let chosenCategory = [], wordIndex = 0, answerHistory = []
 let wrong = []
 
 // Shows available topics on dashboard
@@ -29,9 +30,9 @@ col.forEach((cat) => {
 
     //Console Log each word with its category
     wordDiv.addEventListener('click', () => {
-        // Add property to each word in array to check if a correct answer has been given
-        cat.words.forEach((i) => i.correct = false)
         chosenCategory = cat.words
+        // Add property to each word in array to check if a correct answer has been given 
+        chosenCategory.forEach((i) => i.correct = [])
         console.log(chosenCategory);
         categoryEl.textContent = `${cat.category}`
         dashboardContainer.classList.add('hidden')
@@ -59,18 +60,18 @@ function openFlashcard() {
 
 function checkAnswer() {
     if (userInput.value) {
-        chosenCategory[wordIndex].correct = true
+        answerHistory.push({correct: chosenCategory[wordIndex]})
         console.log(chosenCategory[wordIndex]);
         nextSubmit.style.backgroundColor = 'green'
-        resetValues()
     } else {
+        answerHistory.push({incorrect: chosenCategory[wordIndex]})
         console.log(chosenCategory[wordIndex]);
         nextSubmit.style.backgroundColor = 'red'
         // If answer is wrong, it pushes to 'wrong' array to be worked on later
         wrong.push(chosenCategory[wordIndex])
-        resetValues()
     }
 
+    resetValues()
 }
 
 // Resets the flashcard input fields after checking the answer.
@@ -97,9 +98,32 @@ function wrongAnswers() {
         openFlashcard()
     } else {
         console.log('Done');
+        console.log(answerHistory);
+        flashcardContainer.classList.add('hidden')
+        summaryContainer.classList.remove('hidden')
+        answerHistory.forEach((i) => {
+            if (i.incorrect) {
+                createHistoryEl(i.incorrect.spa, 'red')
+            }
+            if (i.correct) {
+                createHistoryEl(i.correct.spa, 'green')
+            }
+        })
     }
 }
 
+function createHistoryEl(cor, clr) {
+    const div = document.createElement('div')
+    const p = document.createElement('p')
+
+    p.innerText = `${cor}`
+
+    div.appendChild(p)
+    div.classList.add('container')
+    div.style.backgroundColor = clr
+
+    summaryGridEl.appendChild(div)
+}
 
 // Helper
 function id(id) {
