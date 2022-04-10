@@ -9,6 +9,8 @@ const wordEl = id('wordEl')
 const userInput = id('userInput')
 const userInputSubmit = id('userInputSubmit')
 
+let chosenCategory, wordIndex = 0
+
 // Shows available topics on dashboard
 col.forEach((word) => {
     const wordDiv = document.createElement('div')
@@ -21,37 +23,16 @@ col.forEach((word) => {
     wordDiv.appendChild(wordDet)
     wordListEl.appendChild(wordDiv)
 
+    chosenCategory = word
+
     //Console Log each word with its category
-    wordDiv.addEventListener('click', () => {
-        word.words.forEach(i => console.log(word.category, i))
-        dashboardContainer.classList.add('hidden')
-        flashcardContainer.classList.remove('hidden')
-        categoryEl.textContent = word.category
-        setFlashcards(word)
-    })
+    wordDiv.addEventListener('click', openFlashcard)
 })
 
-let wordIndex = 0
 
-// Closes dashboard and opens flashcard
-function setFlashcards(subject) {
-    wordEl.textContent = subject.words[wordIndex].eng
-    userInputSubmit.addEventListener('click', () => {
-        checkAnswer(subject.words[wordIndex].spa)
-    })
-}
 
-function checkAnswer(subject) {
-    if(userInput.value === subject) {
-        console.log('correct');
-    } else {
-        console.log('Incorrect');
-    }
-}
 
 // Helper
 function id(id) {
     return document.getElementById(id)
 }
-
-console.log(true);
