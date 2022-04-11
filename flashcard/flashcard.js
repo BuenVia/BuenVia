@@ -9,9 +9,13 @@ const wordEl = id('wordEl')
 const userInput = id('userInput')
 const userInputSubmit = id('userInputSubmit')
 const nextSubmit = id('nextSubmit')
+const timerEl = id('timer')
 
 const summaryContainer = id('summaryContainer')
 const summaryGridEl = id('summaryGridEl')
+const finishButton = id ('finishButton')
+
+let countdown
 
 let chosenCategory = [], wordIndex = 0, answerHistory = []
 let wrong = []
@@ -28,12 +32,11 @@ col.forEach((cat) => {
     wordDiv.appendChild(wordDet)
     wordListEl.appendChild(wordDiv)
 
-    //Console Log each word with its category
+    //Start flashcard
     wordDiv.addEventListener('click', () => {
         chosenCategory = cat.words
         // Add property to each word in array to check if a correct answer has been given 
         chosenCategory.forEach((i) => i.correct = [])
-        console.log(chosenCategory);
         categoryEl.textContent = `${cat.category}`
         dashboardContainer.classList.add('hidden')
         flashcardContainer.classList.remove('hidden')
@@ -41,31 +44,32 @@ col.forEach((cat) => {
     })
 })
 
+// FLASHCARD FUNCTION
 function openFlashcard() {
+    console.log(answerHistory);
     nextSubmit.style.backgroundColor = ''
-    // chosenCategory.forEach((word) => console.log(word))
+    resetTimer()
     if (wordIndex < chosenCategory.length) {
-        console.log(wordIndex);
+        countdown = setInterval(timer, 1000)
         userInput.disabled = false
         nextSubmit.style.display = 'none'
         userInputSubmit.style.display = 'inline'
         wordEl.textContent = `${chosenCategory[wordIndex].spa}`
         userInputSubmit.addEventListener('click', checkAnswer)
     } else {
-        
         console.log('--------END--------');
         wrongAnswers()
     }
 }
 
 function checkAnswer() {
+    clearInterval(countdown)
     if (userInput.value) {
         answerHistory.push({correct: chosenCategory[wordIndex]})
         console.log(chosenCategory[wordIndex]);
         nextSubmit.style.backgroundColor = 'green'
     } else {
         answerHistory.push({incorrect: chosenCategory[wordIndex]})
-        console.log(chosenCategory[wordIndex]);
         nextSubmit.style.backgroundColor = 'red'
         // If answer is wrong, it pushes to 'wrong' array to be worked on later
         wrong.push(chosenCategory[wordIndex])
@@ -76,7 +80,6 @@ function checkAnswer() {
 
 // Resets the flashcard input fields after checking the answer.
 function resetValues() {
-    // console.log(chosenCategory[wordIndex].eng, wordIndex);
     userInput.value = ''
     userInput.disabled = true
     userInputSubmit.style.display = 'none'
@@ -125,7 +128,48 @@ function createHistoryEl(cor, clr) {
     summaryGridEl.appendChild(div)
 }
 
+// FINISH
+finishButton.addEventListener('click', () => {
+        dashboardContainer.classList.remove('hidden')
+        summaryContainer.classList.add('hidden')
+        countdown = ''
+        chosenCategory = []
+        wordIndex = 0
+        answerHistory = []
+        wrong = []
+        summaryGridEl.innerHTML = ''
+})
+
+
+// TIMER FUNCTION
+let timeSec = 10
+addZero(timeSec)
+
+function timer() {
+    if (timeSec > 0) {
+        timeSec--, 1000
+        timerEl.innerText = `00:${addZero(timeSec)}`
+    } else {
+        timerEl.innerText = "Time's up!!!"
+        checkAnswer()
+    }
+}
+
+function resetTimer() {
+    timeSec = 10
+    timerEl.innerText = `00:${addZero(timeSec)}`
+}
+
+
 // Helper
 function id(id) {
     return document.getElementById(id)
+}
+
+function addZero(elem) {
+    if (elem < 10) {
+        return `0${elem}`
+    } else {
+        return elem
+    }
 }
