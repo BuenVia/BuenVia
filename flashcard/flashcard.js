@@ -97,7 +97,7 @@ function wrongAnswers() {
             chosenCategory.push(i)
         })
         wrong = []
-        console.log(chosenCategory);
+        console.log(chosenCategory.length);
         openFlashcard()
     } else {
         console.log('Done');
