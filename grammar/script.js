@@ -51,6 +51,8 @@ const underline = () => {
 
         let splitSentence = i.split(' ')
 
+        // Creates a span for each word and then user click selects as answer
+        //NEEDS WORKING ON!!!!
         splitSentence.forEach(i => {
             const span = document.createElement('span')
             span.textContent = i + ' '
