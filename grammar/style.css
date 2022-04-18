@@ -35,5 +35,8 @@ body {
 }
 
 .task {
+    padding: 2px;
     margin-top: .5rem;
+    border: none;
+    border-bottom: 1px solid lightgray;
 }

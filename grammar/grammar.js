@@ -5,19 +5,21 @@ export default class Grammar {
 }
 
 class Underline extends Grammar {
-    constructor(type, instruction, sentences) {
+    constructor(type, instruction, sentences, correct) {
         super(type)
         this.instruction = instruction
         this.sentences = sentences
+        this.correct = correct
     }
 }
 
 const nouns = new Underline('Nouns', 'Underline all the nouns in these sentences', 
-[
-    'Odio la geografía y el inglés',
-    'Mi hermano compró unos zapatos nuevos',
-    'Los deberes son siempre dificiles'
-])
+    [
+        'Odio la geografía y el inglés',
+        'Mi hermano compró unos zapatos nuevos',
+        'Los deberes son siempre dificiles'
+    ],
+    false)
 const adjectives = new Grammar('Adjectives')
 const adverbs = new Grammar('Adverbs')
 
