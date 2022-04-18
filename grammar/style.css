@@ -1,0 +1,39 @@
+:root {
+    --bkg-one: rgb(0, 255, 220);
+}
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(245, 245, 245);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/*NAV*/
+.navbar {
+    background-color: var(--bkg-one);
+}
+
+/*MAIN*/
+.title {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+.instruction {
+    margin-top: 2.5rem;
+    width: 100%;
+    background-color: var(--bkg-one);
+    box-shadow: 2px 4px 4px lightgrey;
+}
+
+.btn {
+    margin-bottom: .5rem;
+}
+
+.task {
+    margin-top: .5rem;
+}
