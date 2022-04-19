@@ -19,7 +19,7 @@ const nouns = new Underline('Nouns', 'Click all the nouns in these sentences',
         'Mi hermano compró unos zapatos nuevos',
         'Los deberes son siempre dificiles'
     ],
-    ['geografía ', 'inglés. '])
+    ['geografía ', 'inglés.'])
 const adjectives = new Grammar('Adjectives')
 const adverbs = new Grammar('Adverbs')
 
