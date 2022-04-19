@@ -101,7 +101,7 @@ function wrongAnswers() {
         openFlashcard()
     } else {
         console.log('Done');
-        console.log(answerHistory);
+        
         flashcardContainer.classList.add('hidden')
         summaryContainer.classList.remove('hidden')
         answerHistory.forEach((i) => {
