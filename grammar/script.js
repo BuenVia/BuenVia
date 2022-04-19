@@ -57,16 +57,7 @@ const underline = () => {
             const span = document.createElement('span')
             span.textContent = i + ' '
             span.addEventListener('click', () => {
-                console.log(span);
-                if (span.innerHTML === 'geografía ') {
-                    grammar.textContent = true
-                    span.style.backgroundColor = 'green'
-                    span.style.color = 'white'
-                    console.log(grammar);
-                } else {
-                    console.log(false);
-                    console.log(grammar);
-                }
+                console.log(grammar.correct)
             })
             p.appendChild(span);
         })
