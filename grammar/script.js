@@ -57,7 +57,14 @@ const underline = () => {
             const span = document.createElement('span')
             span.textContent = i + ' '
             span.addEventListener('click', () => {
-                console.log(grammar.correct)
+                for (let i = 0; i < grammar.correct.length; i++) {
+                    console.log(span, grammar.correct[i])
+                    if (span.innerText === grammar.correct[i]) {
+                        console.log(true)
+                    } else {
+                        console.log(false)
+                    }
+                }
             })
             p.appendChild(span);
         })
