@@ -53,18 +53,13 @@ const underline = () => {
 
         // Creates a span for each word and then user click selects as answer
         //NEEDS WORKING ON!!!!
+        let chosenWord = []
         splitSentence.forEach(i => {
             const span = document.createElement('span')
             span.textContent = i + ' '
             span.addEventListener('click', () => {
-                for (let i = 0; i < grammar.correct.length; i++) {
-                    console.log(span, grammar.correct[i])
-                    if (span.innerText === grammar.correct[i]) {
-                        console.log(true)
-                    } else {
-                        console.log(false)
-                    }
-                }
+                chosenWord.push(span.innerText)
+                console.log(chosenWord);
             })
             p.appendChild(span);
         })

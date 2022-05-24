@@ -1,0 +1,49 @@
+:root {
+    --bkg-clr: rgb(0, 240, 200);
+    --txt-clr: rgb(30, 80, 80)
+}
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bkg-clr);
+    color: var(--txt-clr);
+}
+
+
+/*NAV*/
+.navbar {
+    padding: 1rem;
+    border-bottom: 1px solid black;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1200px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.tense-container {
+    padding: 1rem;
+    border: 1px solid var(--txt-clr);
+}
