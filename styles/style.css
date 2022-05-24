@@ -1,5 +1,6 @@
 :root {
-    --bkg-clr: rgb(0, 240, 200);
+    --bkg-clr: rgb(255, 255, 255);
+    --nav-clr: rgb(0, 240, 200);
     --txt-clr: rgb(30, 80, 80)
 }
 
@@ -17,6 +18,7 @@ body {
 /*NAV*/
 .navbar {
     padding: 1rem;
+    background-color: var(--nav-clr);
     border-bottom: 1px solid black;
 }
 
@@ -40,10 +42,11 @@ main {
     justify-content: center;
     align-items: center;
     width: 1200px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .tense-container {
     padding: 1rem;
     border: 1px solid var(--txt-clr);
+    margin: 1rem;
 }
