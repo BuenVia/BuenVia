@@ -53,13 +53,26 @@ const underline = () => {
 
         // Creates a span for each word and then user click selects as answer
         //NEEDS WORKING ON!!!!
+<<<<<<< HEAD
         let chosenWord = []
+=======
+        let chosenword = []
+>>>>>>> 72509dca2ce93304ad4b302d6fae6cfa5ba2c82c
         splitSentence.forEach(i => {
             const span = document.createElement('span')
             span.textContent = i + ' '
+            span.style.backgroundColor = 'transparent'
             span.addEventListener('click', () => {
+<<<<<<< HEAD
                 chosenWord.push(span.innerText)
                 console.log(chosenWord);
+=======
+                if(span.style.backgroundColor === 'transparent') {
+                    span.style.backgroundColor = 'green'
+                } else {
+                    span.style.backgroundColor = 'transparent'
+                }
+>>>>>>> 72509dca2ce93304ad4b302d6fae6cfa5ba2c82c
             })
             p.appendChild(span);
         })
