@@ -1,7 +1,7 @@
 [
     {"tense": "Present",
     "verbs": [
-        {"verb" : "ser",
+        {"verb" : "Ser",
             "conjugate" :[
                 { "english": "I am", "spanish": "soy" },        
                 { "english": "You are", "spanish": "eres" },
@@ -11,7 +11,7 @@
                 { "english": "They are", "spanish": "son" }
             ]
         },
-        {"verb" : "estar",
+        {"verb" : "Estar",
             "conjugate" :[
                 { "english": "I am", "spanish": "estoy" },        
                 { "english": "You are", "spanish": "estas" },
@@ -21,7 +21,7 @@
                 { "english": "They are", "spanish": "estan" }
             ]
         },
-        {"verb" : "hacer",
+        {"verb" : "Hacer",
             "conjugate" :[
                 { "english": "I do", "spanish": "hago" },        
                 { "english": "You do", "spanish": "haces" },
@@ -31,7 +31,7 @@
                 { "english": "They do", "spanish": "hacen" }
             ]
         },
-        {"verb" : "decir",
+        {"verb" : "Decir",
             "conjugate" :[
                 { "english": "I say", "spanish": "digo" },        
                 { "english": "You say", "spanish": "dices" },

@@ -17,7 +17,7 @@ function getWords(words) {
     });
 }
 
-// Render each word and tense to screen
+// Render each word and tense to home screen
 function createTense(tense, verbs) {
     const div = document.createElement('div')
     const btnDiv = document.createElement('div')
@@ -38,9 +38,33 @@ function createTense(tense, verbs) {
                 verb: verb.verb,
                 conjugate: verb.conjugate
             }
-            console.log(chosenVerb.conjugate);
+            showVerb()
         })
     })
 }
 
 // Render chosen word to screen
+function showVerb() {    
+    const html = `
+    <div id="chosenVerbEl">
+        <h3>${chosenVerb.tense}</h3>
+        <h4>${chosenVerb.verb}</h4>
+    </div>
+    `
+    verbEl.innerHTML = html
+    conjugateVerbs()
+}
+
+function conjugateVerbs() {
+    chosenVerb.conjugate.forEach(word => chosenVerbEl.innerHTML += `<p>${word.english}</p>`)
+
+    const conjugateHtml = `
+        <div>
+            <h3>${word.english}</h3>
+        </div>
+    `
+
+    for (let i = 0; i < chosenVerb.conjugate.length; i++) {
+        console.log(chosenVerb.conjugate[i]);
+    }
+}
