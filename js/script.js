@@ -42,3 +42,5 @@ function createTense(tense, verbs) {
         })
     })
 }
+
+// Render chosen word to screen
