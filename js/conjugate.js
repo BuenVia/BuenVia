@@ -22,8 +22,16 @@ const userInput = document.getElementById('userInput')
 
 const submitBtn = document.getElementById('submitBtn')
 const nextBtn = document.getElementById('nextBtn')
+const finishBtn = document.getElementById('finishBtn')
+
+const summaryContainer = document.getElementById('summaryContainer')
+const summaryNoCorrect = document.getElementById('summaryNoCorrect')
+const summaryNoQuestions = document.getElementById('summaryNoQuestions')
+const summaryEl = document.getElementById('summaryEl')
 
 let wordIndex = 0
+let correctAnswer = []
+let noCorrect = 0
 
 submitBtn.addEventListener('click', () => {
     checkAnswer()
@@ -32,17 +40,30 @@ submitBtn.addEventListener('click', () => {
 nextBtn.addEventListener('click', () => {
     wordIndex++
     if(wordIndex < wordObj.verbs[0].conjugate.length) {
-        submitBtn.style.display = 'block'
-        nextBtn.style.display = 'none'
-        userInput.value = ''
-        userInput.disabled = false
         setWord()
     } else {
-        console.log('Done');
+        console.log('Done', correctAnswer);
+        activityContainer.style.display = 'none'
+        summaryNoCorrect.innerText = noCorrect
+        summaryNoQuestions.innerText += correctAnswer.length
+        summary()
     }
 })
 
+finishBtn.addEventListener('click', () => {
+    activityContainer.style.display = 'block'
+    summaryContainer.style.display = 'none'
+    wordIndex = 0
+    correctAnswer = []
+    noCorrect = 0
+    summaryNoCorrect.innerText = ''
+    summaryNoQuestions.innerText = ''
+    summaryEl.innerHTML = ''
+    setWord()
+})
+
 function setTenseAndVerb() {
+    summaryContainer.style.display = 'none'
     tenseEl.innerText = wordObj.tense
     verbEl.innerText = wordObj.verbs[0].verb
     setWord()
@@ -52,6 +73,10 @@ function setWord() {
     wordEl.innerText = wordObj.verbs[0].conjugate[wordIndex].english
     nextBtn.style.display = 'none'
     activityContainer.style.backgroundColor = ''
+    userInput.value = ''
+    userInput.disabled = false
+    submitBtn.style.display = 'block'
+    nextBtn.style.display = 'none'
 }
 
 function checkAnswer() {
@@ -62,15 +87,46 @@ function checkAnswer() {
         userInput.disabled = true
         submitBtn.style.display = 'none'
         nextBtn.style.display = 'block'
-        console.log('Correct');
+        const ansObj = {
+            english: wordObj.verbs[0].conjugate[wordIndex].english,
+            spanish: wordObj.verbs[0].conjugate[wordIndex].spanish,
+            userAns: userInput.value,
+            correct: true
+        }
+        correctAnswer.push(ansObj)
+        noCorrect++
     } else {
-        console.log('Wrong');
         activityContainer.style.backgroundColor = 'red'
+        userInput.disabled = true
+        submitBtn.style.display = 'none'
+        nextBtn.style.display = 'block'
+        const ansObj = {
+            english: wordObj.verbs[0].conjugate[wordIndex].english,
+            spanish: wordObj.verbs[0].conjugate[wordIndex].spanish,
+            userAns: userInput.value,
+            correct: false
+        }
+        correctAnswer.push(ansObj)
+
     }
 }
 
+// Show Summary at end
 function summary() {
-    
+    summaryContainer.style.display = 'block'
+    activityContainer.style.display = 'none'
+    correctAnswer.forEach(word => {
+        const colorCor = () => word.correct === true ? 'green' : 'red'
+        const summaryBox = `
+            <div class="summaryBox" style="background-color:${colorCor()}">
+               <p>${word.english}</p> 
+               <p>Correct answer:${word.spanish}</p>
+               <p>Your answer: ${word.userAns}</p>
+            </div>
+        `
+        summaryEl.innerHTML += summaryBox
+        console.log(word);
+    })
 }
 
 setTenseAndVerb()
