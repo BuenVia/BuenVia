@@ -1,52 +1,63 @@
-const wordObjNew = {
-                    tense: "Present",
-                    verbs: [{
-                                verb: "Ser",
-                                conjugate: [
-                                        { english: "I am", spanish: "soy" },        
-                                        { english: "You are", spanish: "eres" },
-                                        { english: "He / She / It is", spanish: "es" },
-                                        { english: "We are", spanish: "somos" },
-                                        { english: "You (all) are", spanish: "sois" },
-                                        { english: "They are", spanish: "son" }
-                                    ]
-                                }]
-                            }
+const verbContainer = id('verbContainer')
 
-const wordObj = {
-    tense: "Present",
-    verbs: [{
-                verb: "Ser",
-                conjugate: [
-                        { pronoun: "Yo", spanish: "soy" },        
-                        { pronoun: "Tú", spanish: "eres" },
-                        { pronoun: "El / Ella / Usted", spanish: "es" },
-                        { pronoun: "Nosotros", spanish: "somos" },
-                        { pronoun: "Vosotros", spanish: "sois" },
-                        { pronoun: "Ellos / Ellas / Ustedes", spanish: "son" }
-                    ]
-                }]
+const activityContainer = id('activityContainer')
+const tenseEl = id('tenseEl')
+const wordEl = id('wordEl')
+const btnContainer = id('btnContainer')
+
+const userInput = id('userInput')
+
+const submitBtn = id('submitBtn')
+const nextBtn = id('nextBtn')
+const finishBtn = id('finishBtn')
+
+const summaryContainer = id('summaryContainer')
+const summaryNoCorrect = id('summaryNoCorrect')
+const summaryNoQuestions = id('summaryNoQuestions')
+const summaryEl = id('summaryEl')
+
+let wordIndex = 0, correctAnswer = [], noCorrect = 0, chosenVerb
+
+// Call json file
+fetch('./wordbank.json')
+    .then(res => res.json())
+    .then(words => getWords(words))
+    .catch(err => console.error(err))
+
+function getWords(words) {
+    words.forEach(word => {
+        createTense(word.tense, word.verbs)
+    })
+}
+
+function createTense(tense, verbs) {
+    const div = document.createElement('div')
+    const btnDiv = document.createElement('div')
+    div.innerText = tense
+    div.classList.add('flex-col-cont')
+    div.classList.add('tense-container')
+    div.appendChild(btnDiv)
+    verbContainer.appendChild(div)
+
+    verbs.forEach(verb => {
+        const verbButton = document.createElement('button')
+        verbButton.innerText = verb.verb
+        verbButton.classList.add('btn')
+        verbButton.classList.add('verbBtn')
+        btnDiv.appendChild(verbButton)
+
+        verbButton.addEventListener('click', () => {
+            chosenVerb = {
+                tense: tense,
+                verb: verb.verb,
+                conjugate: verb.conjugate
             }
+            activityContainer.classList.remove('hidden')
+            setTenseAndVerb()
+        })
+    })
+}
 
-const activityContainer = document.getElementById('activityContainer')
-const tenseEl = document.getElementById('tenseEl')
-const verbEl = document.getElementById('verbEl')
-const wordEl = document.getElementById('wordEl')
-
-const userInput = document.getElementById('userInput')
-
-const submitBtn = document.getElementById('submitBtn')
-const nextBtn = document.getElementById('nextBtn')
-const finishBtn = document.getElementById('finishBtn')
-
-const summaryContainer = document.getElementById('summaryContainer')
-const summaryNoCorrect = document.getElementById('summaryNoCorrect')
-const summaryNoQuestions = document.getElementById('summaryNoQuestions')
-const summaryEl = document.getElementById('summaryEl')
-
-let wordIndex = 0
-let correctAnswer = []
-let noCorrect = 0
 
 submitBtn.addEventListener('click', () => {
     checkAnswer()
@@ -54,11 +65,11 @@ submitBtn.addEventListener('click', () => {
 
 nextBtn.addEventListener('click', () => {
     wordIndex++
-    if(wordIndex < wordObj.verbs[0].conjugate.length) {
+    if(wordIndex < chosenVerb.conjugate.length) {
         setWord()
     } else {
         console.log('Done', correctAnswer);
-        activityContainer.style.display = 'none'
+        activityContainer.classList.add('hidden')
         summaryNoCorrect.innerText = noCorrect
         summaryNoQuestions.innerText += correctAnswer.length
         summary()
@@ -66,71 +77,68 @@ nextBtn.addEventListener('click', () => {
 })
 
 finishBtn.addEventListener('click', () => {
-    activityContainer.style.display = 'block'
-    summaryContainer.style.display = 'none'
+    chosenVerb = ''
+    verbContainer.classList.remove('hidden')
+    summaryContainer.classList.add('hidden')
     wordIndex = 0
     correctAnswer = []
     noCorrect = 0
     summaryNoCorrect.innerText = ''
     summaryNoQuestions.innerText = ''
     summaryEl.innerHTML = ''
-    setWord()
+    wordEl.innerText = ''
+    tenseEl.innerText = ''
 })
 
 function setTenseAndVerb() {
-    summaryContainer.style.display = 'none'
-    tenseEl.innerText = wordObj.tense
-    verbEl.innerText = wordObj.verbs[0].verb
+    verbContainer.classList.add('hidden')
+    tenseEl.innerText = chosenVerb.tense
     setWord()
 }
 
 function setWord() {
-    wordEl.innerText = wordObj.verbs[0].conjugate[wordIndex].pronoun
+    wordEl.innerText = `${chosenVerb.conjugate[wordIndex].pronoun} (${chosenVerb.verb})`
+    console.log(chosenVerb.conjugate[wordIndex]);
     nextBtn.style.display = 'none'
-    activityContainer.style.backgroundColor = ''
-    userInput.value = ''
+    btnContainer.classList.remove('correct')
+    btnContainer.classList.remove('incorrect')
     userInput.disabled = false
+    userInput.value = ''
     submitBtn.style.display = 'block'
     nextBtn.style.display = 'none'
+    userInput.focus()
 }
 
 function checkAnswer() {
-    // if(userInput.value === '') {
+    // if(userInput.value === '') { 
     //     alert('Enter something')
     // } else 
-    if(userInput.value === wordObj.verbs[0].conjugate[wordIndex].spanish) {
-        activityContainer.style.backgroundColor = 'green'
-        userInput.disabled = true
-        submitBtn.style.display = 'none'
-        nextBtn.style.display = 'block'
-        const ansObj = {
-            pronoun: wordObj.verbs[0].conjugate[wordIndex].pronoun,
-            spanish: wordObj.verbs[0].conjugate[wordIndex].spanish,
-            userAns: userInput.value,
-            correct: true
-        }
-        correctAnswer.push(ansObj)
+    if(userInput.value === chosenVerb.conjugate[wordIndex].spanish) {
+        ansHandler('correct',true)
         noCorrect++
     } else {
-        activityContainer.style.backgroundColor = 'red'
-        userInput.disabled = true
-        submitBtn.style.display = 'none'
-        nextBtn.style.display = 'block'
-        const ansObj = {
-            pronoun: wordObj.verbs[0].conjugate[wordIndex].pronoun,
-            spanish: wordObj.verbs[0].conjugate[wordIndex].spanish,
-            userAns: userInput.value,
-            correct: false
-        }
-        correctAnswer.push(ansObj)
-
+        ansHandler('incorrect', false)
     }
+}
+
+// Create answer object and handle answer related styles
+function ansHandler(color, ans) {
+    btnContainer.classList.add(color)
+    userInput.disabled = true
+    submitBtn.style.display = 'none'
+    nextBtn.style.display = 'block'
+    const ansObj = {
+        pronoun: chosenVerb.conjugate[wordIndex].pronoun,
+        spanish: chosenVerb.conjugate[wordIndex].spanish,
+        userAns: userInput.value,
+        correct: ans
+    }
+    correctAnswer.push(ansObj)
 }
 
 // Show Summary at end
 function summary() {
-    summaryContainer.style.display = 'block'
-    activityContainer.style.display = 'none'
+    summaryContainer.classList.remove('hidden')
     correctAnswer.forEach(word => {
         const summaryCol = () => word.correct === true ? 'correct' : 'incorrect'
         const summaryBox = `
@@ -141,8 +149,10 @@ function summary() {
             </div>
         `
         summaryEl.innerHTML += summaryBox
-        console.log(word);
     })
 }
 
-setTenseAndVerb()
+// Helper functions
+function id(id) {
+    return document.getElementById(id)
+}

@@ -3,42 +3,42 @@
     "verbs": [
         {"verb" : "Ser",
             "conjugate" :[
-                { "english": "I am", "spanish": "soy" },        
-                { "english": "You are", "spanish": "eres" },
-                { "english": "He / She / It is", "spanish": "es" },
-                { "english": "We are", "spanish": "somos" },
-                { "english": "You (all) are", "spanish": "sois" },
-                { "english": "They are", "spanish": "son" }
+                { "pronoun": "Yo", "spanish": "soy" },        
+                { "pronoun": "Tú", "spanish": "eres" },
+                { "pronoun": "El / Ella / Usted", "spanish": "es" },
+                { "pronoun": "Nosotros", "spanish": "somos" },
+                { "pronoun": "Vosotros", "spanish": "sois" },
+                { "pronoun": "Ellos / Ellas / Ustedes", "spanish": "son" }
             ]
         },
         {"verb" : "Estar",
             "conjugate" :[
-                { "english": "I am", "spanish": "estoy" },        
-                { "english": "You are", "spanish": "estas" },
-                { "english": "He / She / It is", "spanish": "esta" },
-                { "english": "We are", "spanish": "estamos" },
-                { "english": "You (all) are", "spanish": "estais" },
-                { "english": "They are", "spanish": "estan" }
+                { "pronoun": "I am", "spanish": "estoy" },        
+                { "pronoun": "You are", "spanish": "estas" },
+                { "pronoun": "He / She / It is", "spanish": "esta" },
+                { "pronoun": "We are", "spanish": "estamos" },
+                { "pronoun": "You (all) are", "spanish": "estais" },
+                { "pronoun": "They are", "spanish": "estan" }
             ]
         },
         {"verb" : "Hacer",
             "conjugate" :[
-                { "english": "I do", "spanish": "hago" },        
-                { "english": "You do", "spanish": "haces" },
-                { "english": "He / She / It does", "spanish": "hace" },
-                { "english": "We do", "spanish": "hacemos" },
-                { "english": "You (all) do", "spanish": "haceis" },
-                { "english": "They do", "spanish": "hacen" }
+                { "pronoun": "I do", "spanish": "hago" },        
+                { "pronoun": "You do", "spanish": "haces" },
+                { "pronoun": "He / She / It does", "spanish": "hace" },
+                { "pronoun": "We do", "spanish": "hacemos" },
+                { "pronoun": "You (all) do", "spanish": "haceis" },
+                { "pronoun": "They do", "spanish": "hacen" }
             ]
         },
         {"verb" : "Decir",
             "conjugate" :[
-                { "english": "I say", "spanish": "digo" },        
-                { "english": "You say", "spanish": "dices" },
-                { "english": "He / She / It says", "spanish": "dice" },
-                { "english": "We say", "spanish": "dicemos" },
-                { "english": "You (all) say", "spanish": "diceis" },
-                { "english": "They say", "spanish": "dicen" }
+                { "pronoun": "I say", "spanish": "digo" },        
+                { "pronoun": "You say", "spanish": "dices" },
+                { "pronoun": "He / She / It says", "spanish": "dice" },
+                { "pronoun": "We say", "spanish": "dicemos" },
+                { "pronoun": "You (all) say", "spanish": "diceis" },
+                { "pronoun": "They say", "spanish": "dicen" }
             ]
         }
         ]
@@ -47,42 +47,42 @@
         "verbs": [
             {"verb" : "ser",
                 "conjugate" :[
-                    { "english": "I am", "spanish": "fui" },        
-                    { "english": "You are", "spanish": "fuiste" },
-                    { "english": "He / She / It is", "spanish": "fue" },
-                    { "english": "We are", "spanish": "fuimos" },
-                    { "english": "You (all) are", "spanish": "fuisteis" },
-                    { "english": "They are", "spanish": "fueron" }
+                    { "pronoun": "I am", "spanish": "fui" },        
+                    { "pronoun": "You are", "spanish": "fuiste" },
+                    { "pronoun": "He / She / It is", "spanish": "fue" },
+                    { "pronoun": "We are", "spanish": "fuimos" },
+                    { "pronoun": "You (all) are", "spanish": "fuisteis" },
+                    { "pronoun": "They are", "spanish": "fueron" }
                 ]
             },
             {"verb" : "estar",
                 "conjugate" :[
-                    { "english": "I was", "spanish": "estuve" },        
-                    { "english": "You were", "spanish": "estuviste" },
-                    { "english": "He / She / It was", "spanish": "estuvo" },
-                    { "english": "We were", "spanish": "estuvimos" },
-                    { "english": "You (all) were", "spanish": "estuveis" },
-                    { "english": "They were", "spanish": "estuvieron" }
+                    { "pronoun": "I was", "spanish": "estuve" },        
+                    { "pronoun": "You were", "spanish": "estuviste" },
+                    { "pronoun": "He / She / It was", "spanish": "estuvo" },
+                    { "pronoun": "We were", "spanish": "estuvimos" },
+                    { "pronoun": "You (all) were", "spanish": "estuveis" },
+                    { "pronoun": "They were", "spanish": "estuvieron" }
                 ]
             },
             {"verb" : "hacer",
                 "conjugate" :[
-                    { "english": "I did", "spanish": "hice" },        
-                    { "english": "You did", "spanish": "hiciste" },
-                    { "english": "He / She / It did", "spanish": "hizo" },
-                    { "english": "We did", "spanish": "hicimos" },
-                    { "english": "You (all) did", "spanish": "hicisteis" },
-                    { "english": "They did", "spanish": "hicieron" }
+                    { "pronoun": "I did", "spanish": "hice" },        
+                    { "pronoun": "You did", "spanish": "hiciste" },
+                    { "pronoun": "He / She / It did", "spanish": "hizo" },
+                    { "pronoun": "We did", "spanish": "hicimos" },
+                    { "pronoun": "You (all) did", "spanish": "hicisteis" },
+                    { "pronoun": "They did", "spanish": "hicieron" }
                 ]
             },
             {"verb" : "decir",
                 "conjugate" :[
-                    { "english": "I said", "spanish": "dije" },        
-                    { "english": "You said", "spanish": "dijiste" },
-                    { "english": "He / She / It said", "spanish": "dijo" },
-                    { "english": "We said", "spanish": "dijimos" },
-                    { "english": "You (all) said", "spanish": "dijisteis" },
-                    { "english": "They said", "spanish": "dijeron" }
+                    { "pronoun": "I said", "spanish": "dije" },        
+                    { "pronoun": "You said", "spanish": "dijiste" },
+                    { "pronoun": "He / She / It said", "spanish": "dijo" },
+                    { "pronoun": "We said", "spanish": "dijimos" },
+                    { "pronoun": "You (all) said", "spanish": "dijisteis" },
+                    { "pronoun": "They said", "spanish": "dijeron" }
                 ]
             }
             ]
@@ -91,42 +91,42 @@
             "verbs": [
                 {"verb" : "ser",
                     "conjugate" :[
-                        { "english": "I was", "spanish": "era" },        
-                        { "english": "You were", "spanish": "eras" },
-                        { "english": "He / She / It was", "spanish": "era" },
-                        { "english": "We were", "spanish": "eramos" },
-                        { "english": "You (all) were", "spanish": "erais" },
-                        { "english": "They were", "spanish": "eran" }
+                        { "pronoun": "I was", "spanish": "era" },        
+                        { "pronoun": "You were", "spanish": "eras" },
+                        { "pronoun": "He / She / It was", "spanish": "era" },
+                        { "pronoun": "We were", "spanish": "eramos" },
+                        { "pronoun": "You (all) were", "spanish": "erais" },
+                        { "pronoun": "They were", "spanish": "eran" }
                     ]
                 },
                 {"verb" : "estar",
                     "conjugate" :[
-                        { "english": "I was", "spanish": "estaba" },        
-                        { "english": "You were", "spanish": "estabas" },
-                        { "english": "He / She / It was", "spanish": "estaba" },
-                        { "english": "We were", "spanish": "estabamos" },
-                        { "english": "You (all) were", "spanish": "estabais" },
-                        { "english": "They were", "spanish": "estaban" }
+                        { "pronoun": "I was", "spanish": "estaba" },        
+                        { "pronoun": "You were", "spanish": "estabas" },
+                        { "pronoun": "He / She / It was", "spanish": "estaba" },
+                        { "pronoun": "We were", "spanish": "estabamos" },
+                        { "pronoun": "You (all) were", "spanish": "estabais" },
+                        { "pronoun": "They were", "spanish": "estaban" }
                     ]
                 },
                 {"verb" : "hacer",
                     "conjugate" :[
-                        { "english": "I did", "spanish": "hacia" },        
-                        { "english": "You did", "spanish": "hacias" },
-                        { "english": "He / She / It did", "spanish": "hacia" },
-                        { "english": "We did", "spanish": "haciamos" },
-                        { "english": "You (all) did", "spanish": "haciais" },
-                        { "english": "They did", "spanish": "hacian" }
+                        { "pronoun": "I did", "spanish": "hacia" },        
+                        { "pronoun": "You did", "spanish": "hacias" },
+                        { "pronoun": "He / She / It did", "spanish": "hacia" },
+                        { "pronoun": "We did", "spanish": "haciamos" },
+                        { "pronoun": "You (all) did", "spanish": "haciais" },
+                        { "pronoun": "They did", "spanish": "hacian" }
                     ]
                 },
                 {"verb" : "decir",
                     "conjugate" :[
-                        { "english": "I said", "spanish": "decia" },        
-                        { "english": "You said", "spanish": "decias" },
-                        { "english": "He / She / It said", "spanish": "decia" },
-                        { "english": "We said", "spanish": "deciamos" },
-                        { "english": "You (all) said", "spanish": "deciais" },
-                        { "english": "They said", "spanish": "decian" }
+                        { "pronoun": "I said", "spanish": "decia" },        
+                        { "pronoun": "You said", "spanish": "decias" },
+                        { "pronoun": "He / She / It said", "spanish": "decia" },
+                        { "pronoun": "We said", "spanish": "deciamos" },
+                        { "pronoun": "You (all) said", "spanish": "deciais" },
+                        { "pronoun": "They said", "spanish": "decian" }
                     ]
                 }
                 ]
