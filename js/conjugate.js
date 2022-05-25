@@ -77,17 +77,7 @@ nextBtn.addEventListener('click', () => {
 })
 
 finishBtn.addEventListener('click', () => {
-    chosenVerb = ''
-    verbContainer.classList.remove('hidden')
-    summaryContainer.classList.add('hidden')
-    wordIndex = 0
-    correctAnswer = []
-    noCorrect = 0
-    summaryNoCorrect.innerText = ''
-    summaryNoQuestions.innerText = ''
-    summaryEl.innerHTML = ''
-    wordEl.innerText = ''
-    tenseEl.innerText = ''
+    resetActivity()
 })
 
 function setTenseAndVerb() {
@@ -150,6 +140,21 @@ function summary() {
         `
         summaryEl.innerHTML += summaryBox
     })
+}
+
+// Reset everything
+function resetActivity() {
+    chosenVerb = ''
+    verbContainer.classList.remove('hidden')
+    summaryContainer.classList.add('hidden')
+    wordIndex = 0
+    correctAnswer = []
+    noCorrect = 0
+    summaryNoCorrect.innerText = ''
+    summaryNoQuestions.innerText = ''
+    summaryEl.innerHTML = ''
+    wordEl.innerText = ''
+    tenseEl.innerText = ''
 }
 
 // Helper functions
