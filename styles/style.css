@@ -31,6 +31,11 @@ body {
     list-style: none;
 }
 
+.nav-links a{
+    text-decoration: none;
+    color: var(--txt-clr);
+}
+
 main {
     display: flex;
     justify-content: center;
@@ -39,6 +44,7 @@ main {
 
 .container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 1200px;
@@ -49,4 +55,9 @@ main {
     padding: 1rem;
     border: 1px solid var(--txt-clr);
     margin: 1rem;
+}
+
+.quizEl {
+    padding: 1rem;
+    border: 1px solid var(--txt-clr);
 }

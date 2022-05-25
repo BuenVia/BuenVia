@@ -1,4 +1,5 @@
 const verbEl = document.getElementById('verbEl')
+const quizEl = document.getElementById('quizEl')
 const tenseTitle = document.getElementById('tenseTitle')
 const verbContainer = document.getElementById('verbContainer')
 
@@ -55,6 +56,7 @@ function showVerb() {
     conjugateVerbs()
 }
 
+// Quiz
 function conjugateVerbs() {
     chosenVerb.conjugate.forEach(word => chosenVerbEl.innerHTML += `<p>${word.english}</p>`)
 
