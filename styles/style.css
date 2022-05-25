@@ -1,7 +1,9 @@
 :root {
     --bkg-clr: rgb(255, 255, 255);
     --nav-clr: rgb(0, 240, 200);
-    --txt-clr: rgb(30, 80, 80)
+    --txt-clr: rgb(30, 80, 80);
+    --cor-ans: rgb(122, 243, 122);
+    --inc-ans: rgb(230, 191, 191);
 }
 
 *, *::after, *::before {
@@ -12,8 +14,22 @@
 body {
     background-color: var(--bkg-clr);
     color: var(--txt-clr);
+    min-height: 100vh;
 }
 
+.flex-col-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    padding: .5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
 /*NAV*/
 .navbar {
@@ -36,19 +52,10 @@ body {
     color: var(--txt-clr);
 }
 
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    padding: 2rem;
     width: 1200px;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--nav-clr);
 }
 
 .tense-container {
@@ -57,11 +64,45 @@ main {
     margin: 1rem;
 }
 
-.quizEl {
+/*ACTIVITY*/
+.el-container {
+    margin: 5rem;
     padding: 1rem;
-    border: 1px solid var(--txt-clr);
+    width: 60%;
+    border: 1px solid var(--bkg-clr);
+    border-radius: 1rem;
 }
 
+.el-box {
+    gap: 2rem;
+    margin: 2rem;
+}
+
+.user-input {
+    padding: .5rem;
+    height: 2rem;
+    width: 300px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid;
+    border-color: var(--bkg-clr);
+    outline: none;
+    text-align: center;
+    font-size: 24px;
+}
+
+.actBtn {
+    background-color: var(--bkg-clr);
+    color: var(--txt-clr);
+    width: 100px;
+}
+.actBtn:hover {
+    transition: 300ms;
+    background-color: var(--txt-clr);
+    color: var(--bkg-clr);
+}
+
+/*SUMMARY*/
 .summaryEl {
     display: flex;
     flex-direction: row;
@@ -73,4 +114,24 @@ main {
     margin: .5rem;
     border: 1px solid var(--txt-clr);
     border-radius: 10px;
+}
+.summaryBox.correct {
+    background-color: var(--cor-ans);
+}
+
+.summaryBox.incorrect {
+    background-color: var(--inc-ans);
+    color: var(--txt-clr);
+}
+
+.finBtn {
+    background-color: var(--bkg-clr);
+    color: var(--txt-clr);
+    width: 100px;
+}
+
+.finBtn:hover {
+    transition: 300ms;
+    background-color: var(--txt-clr);
+    color: var(--bkg-clr);
 }

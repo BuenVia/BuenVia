@@ -24,30 +24,34 @@
     </nav>
 
     <!--MAIN-->
-    <main>
-        <div class="container">
+    <main class="flex-col-cont">
+        <div class="container flex-col-cont">
 
-            <!--WORD CONTAINTER-->
-            <section class="wordContainer quizEl" id="activityContainer">
-                <div>
+            <!--ACTIVITY CONTAINTER-->
+            <section class="flex-col-cont el-container" id="activityContainer">
+                <div class="flex-col-cont el-box">
                     <h4><span id="tenseEl"></span> : <span id="verbEl"></span></h4>
                     <h2 id="wordEl"></h2>
                 </div>
-                <div>
-                    <input type="text" name="userInput" id="userInput">
+                <div class="el-box">
+                    <input type="text" class="user-input" name="userInput" id="userInput">
                 </div>
-                <div>
-                    <button id="submitBtn">Submit</button>
-                    <button id="nextBtn">Next</button>
+                <div class="el-box">
+                    <button class="btn actBtn" id="submitBtn">Submit</button>
+                    <button class="btn actBtn" id="nextBtn">Next</button>
                 </div>
             </section>
 
-            <!--SUMMARY-->
-            <section class="wordContainer quizEl" id="summaryContainer">
-                <h2>Summary</h2>
-                <h4>Score: <span id="summaryNoCorrect"></span> / <span id="summaryNoQuestions"></span></h4>
+            <!--SUMMARY CONTAINER-->
+            <section class="flex-col-cont el-container" id="summaryContainer">
+                <div class="el-box">
+                    <h2>Summary</h2>
+                    <h4>Score: <span id="summaryNoCorrect"></span> / <span id="summaryNoQuestions"></span></h4>
+                </div>
                 <div class="summaryEl" id="summaryEl"></div>
-                <button id="finishBtn">Finish</button>
+                <div class="el-box">
+                    <button class="btn finBtn" id="finishBtn">Finish</button>
+                </div>
             </section>
             
         </div>
