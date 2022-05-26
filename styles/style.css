@@ -58,7 +58,7 @@ body {
 
 .container {
     padding: 2rem;
-    width: 1200px;
+    max-width: 1200px;
 
 }
 
@@ -156,4 +156,26 @@ body {
     transition: 300ms;
     background-color: var(--nav-clr);
     color: var(--txt-clr);
+}
+
+/*STORE*/
+.store-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.item-box {
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.item-img-container {
+    display: flex;
+}
+
+.item-img {
+    height: 100px;
 }
