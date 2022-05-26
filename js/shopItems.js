@@ -32,29 +32,31 @@ const shoppingBasketEl = id('shoppingBasketEl')
 const basket = []
 let quantityBasket
 
+
 // Shows items
 itemsList.forEach(item => {
     const html = `
     <div class="item-box">
-        <div class="flex-col-cont">
+    <div class="flex-col-cont">
             <img src="styles/images/${item.image}" alt="BuenVia Image" class="item-img-sml">
         </div>
         <div class="item-details">
-            <h2>${item.item}</h2>
-            <p>£${item.price}</p>
-            <button data-btn-item='${JSON.stringify(item)}'>Buy</button>
+        <h2>${item.item}</h2>
+        <p>£${item.price}</p>
+        <button data-btn-item='${JSON.stringify(item)}'>Buy</button>
         </div>
-    </div>
-    `
-    storeContainer.innerHTML += html
+        </div>
+        `
+        storeContainer.innerHTML += html
 })
-
-const itemBtn = document.querySelectorAll('[data-btn-item]')
-let itemObj 
-
+    
+    const itemBtn = document.querySelectorAll('[data-btn-item]')
+    let itemObj 
+    
 //Shows individual item
 itemBtn.forEach(data_btn => 
     data_btn.addEventListener('click', () => {
+        basketBackBtn.style.display = 'flex'
         itemObj = JSON.parse(data_btn.dataset.btnItem)
         
         itemViewContainer.classList.remove('hidden')
@@ -85,6 +87,7 @@ itemViewAddBtn.addEventListener('click', () => {
 
 // Back button
 basketBackBtn.addEventListener('click', () => {
+
     itemViewContainer.classList.add('hidden')
     storeContainer.classList.remove('hidden')
 })
@@ -95,10 +98,13 @@ function calcQuantity(item) {
     for (let i = 0; i < item.length; i++) {
         quant += item[i].quantity
     }
-    shoppingBasketEl.innerHTML = quant
+    shoppingBasketEl.innerText = quant
+    id('cart').style.height = '45px'
 }
 
 viewBasketBtn.addEventListener('click', () => {
+    viewBasketBtn.style.display = 'none'
+    basketBackBtn.style.display = 'flex'
     storeContainer.style.display = 'none'
     itemViewContainer.style.display = 'none'
     basketContainer.style.display = 'flex'

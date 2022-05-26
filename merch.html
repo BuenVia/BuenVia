@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
-    <script src="js/shopItems.js" type="module"></script>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/style.css">
+        <script src="js/shopItems.js" type="module"></script>
     <title>BuenVia</title>
 </head>
 <body>
-
+    
     <!-- INTRO-->
-<!-- <div class="intro">
-    <div class="hello-container">
+    <!-- <div class="intro">
+        <div class="hello-container">
         <h1>WELCOME TO BUENVIA</h1>
         <button>Let's begin...</button>
     </div>
 </div> -->
-    
+
 <nav>
     <div class="navbar">
         <img class="nav-logo" alt="BuenVia Logo">
@@ -31,37 +31,37 @@
 </nav>
 
 
-<main>
-    <div class="container">
+<main class="flex-col-cont">
+    <div class="container flex-col-cont">
 
         <header>
             <div class="flex-row-cont header">
                 <h2>BuenVia Shop</h2>
-                <p>Shopping basket: <span id="shoppingBasketEl"></span> items</p>
+                <p><img src="styles/images/cart.svg" alt="" class="cart" id="cart"> <span id="shoppingBasketEl">0</span> items</p>
                 <button id="viewBasketBtn">View Basket</button>
             </div>
+            <div>
+                <button class="btn back-btn" id="basketBackBtn">View other items</button>
+            </div>
         </header>
-
+        
         <div id="storeContainer" class="flex-row-cont"></div>
-
+        
         <!--ITEM VIEW-->
         <div id="itemViewContainer" class="hidden">
-            <div>
-                <button id="basketBackBtn">View other items</button>
-            </div>
             <div class="flex-col-cont">
                 <div class="flex-col-cont">
                     <span src="" alt="BuenVia Image" class="itm-img-lg" id="itemViewImg">
-                </div>
-                <div>
-                    <h2 id="itemViewTitle"></h2>
-                    <h4 id="itemViewPrice">£</h4>
-                    <input type="number" id="itemViewQuantity" min="1" max="3" value="1">
+                    </div>
+                    <div>
+                        <h2 id="itemViewTitle"></h2>
+                        <h4 id="itemViewPrice">£</h4>
+                        <input type="number" id="itemViewQuantity" min="1" max="3" value="1">
                     <button id="itemViewAddBtn">Add</button>
                 </div>
             </div>
         </div>
-
+        
         <!--BASKET CONTAINER-->
         <div id="basketContainer" class="hidden flex-col-cont">
             <h1>Shopping Basket</h1>

@@ -170,6 +170,10 @@ body {
     gap: 1rem;
 }
 
+.cart {
+    height: 25px;
+}
+
 .store-container {
     display: flex;
     flex-direction: row;
@@ -193,4 +197,8 @@ body {
 
 .itm-img-lg {
     height: 250px;
+}
+
+.back-btn {
+    display: none;
 }
