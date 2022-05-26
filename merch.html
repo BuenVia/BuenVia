@@ -35,10 +35,41 @@
     <div class="container">
 
         <header>
-            <h2>BuenVia Shop</h2>
+            <div class="flex-row-cont header">
+                <h2>BuenVia Shop</h2>
+                <p>Shopping basket: <span id="shoppingBasketEl"></span> items</p>
+            </div>
         </header>
 
-        <div id="storeContainer" class="store-container"></div>
+        <div id="storeContainer" class="flex-row-cont"></div>
+
+        <!--ITEM VIEW-->
+        <div id="itemViewContainer" class="hidden">
+            <div>
+                <button id="basketBackBtn">View other items</button>
+            </div>
+            <div class="flex-col-cont">
+                <div class="flex-col-cont">
+                    <span src="" alt="BuenVia Image" class="itm-img-lg" id="itemViewImg">
+                </div>
+                <div>
+                    <h2 id="itemViewTitle"></h2>
+                    <h4 id="itemViewPrice">£</h4>
+                    <input type="number" id="itemViewQuantity" min="1" max="3" value="1">
+                    <button id="itemViewAddBtn">Add</button>
+                </div>
+            </div>
+        </div>
+
+        <!--BASKET CONTAINER-->
+        <div id="basketContainer">
+            <h1>Shopping Basket</h1>
+            <div id="basketSummary">
+                <p>Total number of items in the basket: <span id="numItems"></span></p>
+                <p>Totel price: <span id="totalPriceItems"></span></p>
+            </div>
+            <div id="itemListContainer"></div>
+        </div>
 
     </div>
 </main>

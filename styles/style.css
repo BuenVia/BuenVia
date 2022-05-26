@@ -24,6 +24,13 @@ body {
     align-items: center;
 }
 
+.flex-row-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 .btn {
     padding: .5rem;
     border: none;
@@ -159,6 +166,10 @@ body {
 }
 
 /*STORE*/
+.header {
+    gap: 1rem;
+}
+
 .store-container {
     display: flex;
     flex-direction: row;
@@ -176,6 +187,10 @@ body {
     display: flex;
 }
 
-.item-img {
+.item-img-sml {
     height: 100px;
+}
+
+.itm-img-lg {
+    height: 250px;
 }
