@@ -17,6 +17,7 @@ const pencilCase = new shopItem("Pencil Case", 9834554, 3.99, 'pencilcase.jpg', 
 
 const itemsList = [tshirt, cap, hoodie, bag, coffeeCup, pencilCase]
 
+////////////////////////////////////////////////////////////////////////
 const storeContainer = id('storeContainer')
 const itemViewContainer = id('itemViewContainer')
 const basketContainer = id('basketContainer')
@@ -24,11 +25,12 @@ const basketContainer = id('basketContainer')
 const itemViewAddBtn = id('itemViewAddBtn')
 
 const basketBackBtn = id('basketBackBtn')
+const viewBasketBtn = id('viewBasketBtn')
 
 const shoppingBasketEl = id('shoppingBasketEl')
 
 const basket = []
-
+let quantityBasket
 
 // Shows items
 itemsList.forEach(item => {
@@ -71,12 +73,14 @@ itemViewAddBtn.addEventListener('click', () => {
         item: itemObj.item,
         price: itemObj.price,
         sku: itemObj.sku,
-        quantity: id('itemViewQuantity').value
+        image: itemObj.image,
+        quantity: parseInt(id('itemViewQuantity').value)
     }
     basket.push(basketItemObj)
-    shoppingBasketEl.innerText = basket.length
 
     console.log(basket);
+    calcQuantity(basket)
+    id('itemViewQuantity').value = '1'
 })
 
 // Back button
@@ -84,6 +88,41 @@ basketBackBtn.addEventListener('click', () => {
     itemViewContainer.classList.add('hidden')
     storeContainer.classList.remove('hidden')
 })
+
+
+function calcQuantity(item) {
+    let quant = 0
+    for (let i = 0; i < item.length; i++) {
+        quant += item[i].quantity
+    }
+    shoppingBasketEl.innerHTML = quant
+}
+
+viewBasketBtn.addEventListener('click', () => {
+    storeContainer.style.display = 'none'
+    itemViewContainer.style.display = 'none'
+    basketContainer.style.display = 'flex'
+
+    showBasketItems(basket)
+})
+
+function showBasketItems(item) {
+    item.forEach(item => {
+        const priceCalc = () => item.price * item.quantity
+        
+        const basketHtml = `
+        <div class="item-box">
+            <img src="styles/images/${item.image}" alt="BuenVia Image" class="item-img-sml">
+            <p>${item.item}</p>
+            <p>Quantity: ${item.quantity}</p>
+            <p>Price: £${item.price}</p>
+            <h4>Total: £${priceCalc()}</h4>
+        </div>
+        `
+
+        basketContainer.innerHTML += basketHtml
+    })
+}
 
 // Helper
 function id(id) {
