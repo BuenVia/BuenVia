@@ -108,42 +108,43 @@ function calcTotalPrice(item) {
     return `£${totalPrice.toFixed(2)}`
 }
 
-let removeBtn
-
 // Displays the items in the basket
 function showBasketItems(item) {
-    itemListContainer.innerHTML = ''
-    totalPriceItems.innerHTML = calcTotalPrice(basket)
-    numItems.innerText = calcQuantity(basket)
-    
-    
+    resetBasketElements(basket)
     item.forEach(item => {
         // console.log(basket.indexOf(item));
         const priceCalc = () => item.price * item.quantity
         const basketHtml = `
-        <div class="item-box">
-            <img src="styles/images/${item.image}" alt="BuenVia Image" class="item-img-sml">
-            <p>${item.item}</p>
-            <p>Quantity: ${item.quantity}</p>
-            <p>Price: £${item.price}</p>
-            <h4>Total: £${priceCalc()}</h4>
-            <button data-btn-remove='${JSON.stringify(item)}'>Remove Item</button>
-        </div>
-        `
+            <div class="item-box">
+                <img src="styles/images/${item.image}" alt="BuenVia Image" class="item-img-sml">
+                <p>${item.item}</p>
+                <p>Quantity: ${item.quantity}</p>
+                <p>Price: £${item.price}</p>
+                <h4>Total: £${priceCalc()}</h4>
+                <button data-btn-remove='${JSON.stringify(item)}'>Remove Item</button>
+            </div>
+            `
         itemListContainer.innerHTML += basketHtml
 
-        removeBtn = document.querySelectorAll('[data-btn-remove]')
-    
+        // Remove items from the basket
+        const removeBtn = document.querySelectorAll('[data-btn-remove]')
         removeBtn.forEach(btn => {
             btn.addEventListener('click', () => {
                 basket.splice(basket.indexOf(item)-1, 1)
                 console.log(basket);
-                showBasketItems(item)
+                resetBasketElements(basket)
+                showBasketItems(basket)
+                shoppingBasketEl.innerText = calcQuantity(basket)
             })
         })
     })
+}
 
-
+// Reset basket elements
+function resetBasketElements(item) {
+    itemListContainer.innerHTML = ''
+    numItems.innerHTML = calcQuantity(basket)
+    totalPriceItems.innerHTML = calcTotalPrice(basket)
 }
 
 // Helper
