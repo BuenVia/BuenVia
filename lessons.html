@@ -5,18 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
-    <script src="js/script.js" type="module"></script>
+    <script src="js/lessons.js" type="module"></script>
     <title>BuenVia</title>
 </head>
 <body>
 
-    <!--INTRO-->
-<!-- <div class="intro">
-    <div class="hello-container">
-        <h1>WELCOME TO BUENVIA</h1>
-        <button>Let's begin...</button>
-    </div>
-</div> -->
     
 <nav>
     <div class="navbar">
@@ -31,13 +24,195 @@
 </nav>
 
 
-<main>
-    <div class="container">
+<main class="flex-col-cont">
+    <div class="container flex-col-cont">
 
-        <header></header>
+        <header>
+            <h1>Lessons</h1>
+        </header>
 
+        <div class="info-container">
+            <p>In Spanish, you can tell who was doing what, and when, from the way the verb is conjugated. Click on one of the below to find out how to conjugate a verb in that tense.</p>
+        </div>
+
+        <!--Infinitive-->
+        <div class="tense-container">
+            <button id="infDivBtn">open</button>
+            <h2>Infinitive</h2>
+            <div id="infinitiveTenseContainer" class="inf-tense-cont">
+
+            <p>The infinitive doesn't actually indicate who is doing what. The infinitive is the natural form of the verb - i.e. the verb in its original state.</p>
+            
+            <p>In Spanish, verbs always have one of three endings: -ar, -er and -ir. The 
+            ending will help you to understand which way to conjugate the verb.</p>
+            
+            <p>The part before the -ar, -er or -ir ending is the stem of the verb and is used for the basis of the conjugations. More often than not, the stem will remain the same - however, there are a significant number of stem-changing verbs and irregular verbs. We will cover those in each section.</p>
+
+            <table>
+                <tr>
+                    <th>AR</th>
+                    <th>ER</th>
+                    <th>IR</th>
+                </tr>
+                <tr>
+                    <td>Hablar</td>
+                    <td>Comer</td>
+                    <td>Decir</td>
+                </tr>
+            </table>
+        </div>
+    </div> 
+        
+
+        <!--Present-->
+        <div class="tense-container">
+            <button id="presDivBtn">open</button>
+            <h2>Present Tense</h2>
+            <div id="presentTenseContainer" class="tense-container pres-tense-cont">
+                
+            <p>The present tense tells you what is happening now (as opposed to the past or the future) - or things that happen regularly. </p>
+            
+            <h3>Regular Verbs</h3>
+            <table class="tense-table">
+            <tr>
+                <th></th>
+                <th>AR</th>
+                <th>ER</th>
+                <th>IR</th>
+            </tr>
+            <tr>
+                <td>Yo</td>
+                <td>hablo</td>
+                <td>como</td>
+                <td>vivo</td>
+            </tr>
+            <tr>
+                <td>Tú</td>
+                <td>hablas</td>
+                <td>comes</td>
+                <td>vives</td>
+            </tr>
+            <tr>
+                <td>El / Ella / Usted</td>
+                <td>habla</td>
+                <td>come</td>
+                <td>vive</td>
+            </tr>
+            <tr>
+                <td>Nosotros</td>
+                <td>hablamos</td>
+                <td>comemos</td>
+                <td>vivemos</td>
+            </tr>
+            <tr>
+                <td>Vosotros</td>
+                <td>hablais</td>
+                <td>comeis</td>
+                <td>viveis</td>
+            </tr>
+            <tr>
+                <td>Ellos / Ellas / Ustedes</td>
+                <td>hablan</td>
+                <td>comen</td>
+                <td>viven</td>
+            </tr>
+        </table>
+
+        <h3>Stem-Changing Verbs</h3>
+        <table class="tense-table">
+            <tr>
+                <th></th>
+                <th>AR</th>
+                <th>ER</th>
+                <th>IR</th>
+            </tr>
+            <tr>
+                <td>Yo</td>
+                <td>hablo</td>
+                <td>como</td>
+                <td>vivo</td>
+            </tr>
+            <tr>
+                <td>Tú</td>
+                <td>hablas</td>
+                <td>comes</td>
+                <td>vives</td>
+            </tr>
+            <tr>
+                <td>El / Ella / Usted</td>
+                <td>habla</td>
+                <td>come</td>
+                <td>vive</td>
+            </tr>
+            <tr>
+                <td>Nosotros</td>
+                <td>hablamos</td>
+                <td>comemos</td>
+                <td>vivemos</td>
+            </tr>
+            <tr>
+                <td>Vosotros</td>
+                <td>hablais</td>
+                <td>comeis</td>
+                <td>viveis</td>
+            </tr>
+            <tr>
+                <td>Ellos / Ellas / Ustedes</td>
+                <td>hablan</td>
+                <td>comen</td>
+                <td>viven</td>
+            </tr>
+        </table>
+
+        <h3>Irregular verbs</h3>
+        <table class="tense-table">
+            <tr>
+                <th></th>
+                <th>AR</th>
+                <th>ER</th>
+                <th>IR</th>
+            </tr>
+            <tr>
+                <td>Yo</td>
+                <td>hablo</td>
+                <td>como</td>
+                <td>vivo</td>
+            </tr>
+            <tr>
+                <td>Tú</td>
+                <td>hablas</td>
+                <td>comes</td>
+                <td>vives</td>
+            </tr>
+            <tr>
+                <td>El / Ella / Usted</td>
+                <td>habla</td>
+                <td>come</td>
+                <td>vive</td>
+            </tr>
+            <tr>
+                <td>Nosotros</td>
+                <td>hablamos</td>
+                <td>comemos</td>
+                <td>vivemos</td>
+            </tr>
+            <tr>
+                <td>Vosotros</td>
+                <td>hablais</td>
+                <td>comeis</td>
+                <td>viveis</td>
+            </tr>
+            <tr>
+                <td>Ellos / Ellas / Ustedes</td>
+                <td>hablan</td>
+                <td>comen</td>
+                <td>viven</td>
+            </tr>
+        </table>
+    </div>
 
     </div>
+            </div>
 </main>
 
 </body>

@@ -99,7 +99,7 @@ function calcQuantity(item) {
         quant += item[i].quantity
     }
     shoppingBasketEl.innerText = quant
-    id('cart').style.height = '45px'
+    id('cart').style.ba = '45px'
 }
 
 viewBasketBtn.addEventListener('click', () => {

@@ -202,3 +202,34 @@ body {
 .back-btn {
     display: none;
 }
+
+/*LESSONS*/
+
+.tense-table {
+    border: 1px solid var(--txt-clr);
+    padding: 1rem;
+}
+
+.tense-table tr {
+    border: 1px solid var(--txt-clr);
+}
+
+.tense-table th {
+    border: 1px solid var(--txt-clr);
+    padding: 1rem;
+}
+
+.tense-table td {
+    border: none;
+    background-color: var(--nav-clr);
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.inf-tense-cont {
+    display: none;
+}
+
+.pres-tense-cont {
+    display: none;
+}
