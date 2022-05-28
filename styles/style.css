@@ -12,7 +12,6 @@
 }
 
 body {
-    background-color: var(--bkg-clr);
     color: var(--txt-clr);
     min-height: 100vh;
 }
@@ -47,6 +46,7 @@ body {
     padding: 1rem;
     background-color: var(--nav-clr);
     border-bottom: 1px solid black;
+    position: inherit;
 }
 
 .nav-links {
@@ -67,6 +67,20 @@ body {
     padding: 2rem;
     max-width: 1200px;
 
+}
+
+/*MAIN*/
+.index-container {
+    height: 100vh;
+    background-color: var(--nav-clr);
+}
+
+.second {
+    height: 100vh;
+}
+
+.test {
+    height: 100%;
 }
 
 /*VERB*/
