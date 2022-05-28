@@ -72,11 +72,10 @@ body {
 /*MAIN*/
 .index-container {
     height: 100vh;
-    background-color: var(--nav-clr);
 }
 
-.second {
-    height: 100vh;
+.top {
+    background-color: var(--nav-clr);
 }
 
 .test {
