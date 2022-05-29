@@ -14,7 +14,7 @@
     <nav>
         <div class="navbar">
             <img class="nav-logo" alt="BuenVia Logo">
-            <ul class="nav-links">
+            <ul class="nav-links flex-row">
                 <a href="index.html"><li>HOME</li></a>
                 <a href="conjugate.html"><li>LEARN</li></a>
                 <a href="lessons.html"><li>LESSONS</li></a>
@@ -24,15 +24,15 @@
     </nav>
 
     <!--MAIN-->
-    <main class="flex-col-cont">
-        <div class="container flex-col-cont">
+    <main class="flex-col">
+        <div class="width-container flex-col">
 
             <!--VERB CONTAINER-->
-            <div class="flex-col-cont el-container" id="verbContainer"></div>
+            <div class="flex-col el-container" id="verbContainer"></div>
 
             <!--ACTIVITY CONTAINTER-->
-            <section class="flex-col-cont el-container hidden" id="activityContainer">
-                <div class="flex-col-cont el-box">
+            <section class="flex-col el-container hidden" id="activityContainer">
+                <div class="flex-col el-box">
                     <h4>Translate in the <span id="tenseEl"></span> tense</h4>
                     <h2 id="wordEl"></h2>
                 </div>
@@ -46,7 +46,7 @@
             </section>
 
             <!--SUMMARY CONTAINER-->
-            <section class="flex-col-cont el-container hidden" id="summaryContainer">
+            <section class="flex-col el-container hidden" id="summaryContainer">
                 <div class="el-box">
                     <h2>Summary</h2>
                     <h4>Score: <span id="summaryNoCorrect"></span> / <span id="summaryNoQuestions"></span></h4>

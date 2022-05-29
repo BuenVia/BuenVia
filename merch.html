@@ -21,7 +21,7 @@
 <nav>
     <div class="navbar">
         <img class="nav-logo" alt="BuenVia Logo">
-        <ul class="nav-links">
+        <ul class="nav-links flex-row">
             <a href="index.html"><li>HOME</li></a>
             <a href="conjugate.html"><li>LEARN</li></a>
             <a href="lessons.html"><li>LESSONS</li></a>
@@ -31,11 +31,11 @@
 </nav>
 
 
-<main class="flex-col-cont">
-    <div class="container flex-col-cont">
+<main class="flex-col">
+    <div class="width-container flex-col-cont">
 
         <header>
-            <div class="flex-row-cont header">
+            <div class="flex-row header">
                 <h2>BuenVia Shop</h2>
                 <p><img src="styles/images/cart.svg" alt="" class="cart" id="cart"> <span id="shoppingBasketEl">0</span> items</p>
                 <button id="viewBasketBtn">View Basket</button>
@@ -45,12 +45,12 @@
             </div>
         </header>
         
-        <div id="storeContainer" class="flex-row-cont"></div>
+        <div id="storeContainer" class="flex-row"></div>
         
         <!--ITEM VIEW-->
         <div id="itemViewContainer" class="hidden">
-            <div class="flex-col-cont">
-                <div class="flex-col-cont">
+            <div class="flex-col">
+                <div class="flex-col">
                     <span src="" alt="BuenVia Image" class="itm-img-lg" id="itemViewImg">
                     </div>
                     <div>
@@ -63,7 +63,7 @@
         </div>
         
         <!--BASKET CONTAINER-->
-        <div id="basketContainer" class="hidden flex-col-cont">
+        <div id="basketContainer" class="hidden flex-col">
             <h1>Shopping Basket</h1>
             <div id="basketSummary">
                 <p>Total number of items in the basket: <span id="numItems"></span></p>

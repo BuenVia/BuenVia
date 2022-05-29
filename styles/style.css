@@ -1,7 +1,7 @@
 :root {
     --bkg-clr: rgb(255, 255, 255);
-    --nav-clr: rgb(0, 240, 200);
-    --txt-clr: rgb(30, 80, 80);
+    --nav-clr: rgb(0, 128, 240);
+    --txt-clr: rgb(230, 233, 233);
     --cor-ans: rgb(190, 250, 190);
     --inc-ans: rgb(230, 191, 191);
 }
@@ -14,16 +14,17 @@
 body {
     color: var(--txt-clr);
     min-height: 100vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.flex-col-cont {
+.flex-col {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.flex-row-cont {
+.flex-row {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -50,12 +51,12 @@ body {
 }
 
 .nav-links {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     gap: 1rem;
     list-style: none;
+}
+
+.nav-logo {
+
 }
 
 .nav-links a{
@@ -63,23 +64,40 @@ body {
     color: var(--txt-clr);
 }
 
-.container {
-    padding: 2rem;
-    max-width: 1200px;
-
-}
 
 /*MAIN*/
-.index-container {
+.width-container {
+padding: 2rem;
+max-width: 1200px;
+}
+
+.heignt-container {
     height: 100vh;
 }
 
-.top {
+.section-height {
+    height: 100%;
+}
+
+.top-container {
     background-color: var(--nav-clr);
 }
 
-.test {
-    height: 100%;
+.welcome-container {
+    gap: 8rem;
+}
+
+.index-btn-container {
+    gap: 1rem;
+}
+
+.index-btn {
+    width: 10rem;
+}
+.index-btn:hover {
+    transition: 200ms;
+    background-color: var(--txt-clr);
+    color: var(--bkg-clr);
 }
 
 /*VERB*/
