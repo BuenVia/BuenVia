@@ -1,7 +1,7 @@
 :root {
     --bkg-clr: rgb(255, 255, 255);
     --nav-clr: rgb(0, 128, 240);
-    --txt-clr: rgb(230, 233, 233);
+    --txt-clr: rgb(102, 102, 102);
     --cor-ans: rgb(190, 250, 190);
     --inc-ans: rgb(230, 191, 191);
 }
@@ -101,6 +101,12 @@ max-width: 1200px;
 }
 
 /*VERB*/
+.scroll {
+    width: 20rem;
+    overflow: auto;
+    white-space: nowrap;
+}
+
 .tense-container {
     padding: 1rem;
     border: 1px solid var(--txt-clr);

@@ -40,6 +40,16 @@
                 { "pronoun": "You (all) say", "spanish": "diceis" },
                 { "pronoun": "They say", "spanish": "dicen" }
             ]
+        },
+        {"verb" : "Hablar",
+            "conjugate" :[
+                { "pronoun": "I talk", "spanish": "hablo" },        
+                { "pronoun": "You talk", "spanish": "hablas" },
+                { "pronoun": "He / She / It talks", "spanish": "habla" },
+                { "pronoun": "We talk", "spanish": "hablamos" },
+                { "pronoun": "You (all) talk", "spanish": "hablais" },
+                { "pronoun": "They talk", "spanish": "hablan" }
+            ]
         }
         ]
     },

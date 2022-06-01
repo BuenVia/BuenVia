@@ -36,6 +36,7 @@ function createTense(tense, verbs) {
     div.innerText = tense
     div.classList.add('flex-col-cont')
     div.classList.add('tense-container')
+    div.classList.add('scroll')
     div.appendChild(btnDiv)
     verbContainer.appendChild(div)
 
