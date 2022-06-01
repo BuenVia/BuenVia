@@ -23,14 +23,14 @@ let quantityBasket
 itemsList.forEach(item => {
     const html = `
     <div class="item-box">
-    <div class="flex-col-cont">
-    <img src="styles/images/${item.image}" alt="BuenVia Image" class="item-img-sml">
-    </div>
-    <div class="item-details">
-    <h2>${item.item}</h2>
-    <p>£${item.price}</p>
-    <button data-btn-item='${JSON.stringify(item)}'>Buy</button>
-    </div>
+        <div class="flex-col">
+            <img src="styles/images/${item.image}" alt="BuenVia Image" class="item-img-sml">
+        </div>
+        <div class="item-details">
+            <h2>${item.item}</h2>
+            <p>£${item.price}</p>
+        <button data-btn-item='${JSON.stringify(item)}'>Buy</button>
+        </div>
     </div>
     `
     storeContainer.innerHTML += html

@@ -1,7 +1,7 @@
 :root {
     --bkg-clr: rgb(255, 255, 255);
-    --nav-clr: rgb(0, 128, 240);
-    --txt-clr: rgb(102, 102, 102);
+    --nav-clr: rgb(112, 0, 240);
+    --txt-clr: rgb(190, 190, 190);
     --cor-ans: rgb(190, 250, 190);
     --inc-ans: rgb(230, 191, 191);
 }
@@ -218,15 +218,17 @@ max-width: 1200px;
 }
 
 .item-box {
+    width: 10rem;
+    height: 12rem;
     margin: 1rem;
     padding: 1rem;
     border: 1px solid;
     border-radius: 10px;
 }
 
-.item-img-container {
+/* .item-img-container {
     display: flex;
-}
+} */
 
 .item-img-sml {
     height: 100px;
@@ -234,6 +236,13 @@ max-width: 1200px;
 
 .itm-img-lg {
     height: 250px;
+}
+
+.item-details {
+
+}
+.item-details h2 {
+    font-size: 20px;
 }
 
 .back-btn {
