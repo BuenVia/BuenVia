@@ -15,6 +15,7 @@ body {
     color: var(--txt-clr);
     min-height: 100vh;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-sizing: border-box;
 }
 
 .flex-col {
@@ -173,6 +174,8 @@ body {
     margin-top: 1rem;
     padding: .5rem;
     border-radius: 10px;
+    background-color: rgb(235, 235, 235);
+    box-shadow: 0 0 3px 3px rgb(220, 220, 220);
     outline: none;
 }
 
@@ -238,7 +241,77 @@ body {
     display: none;
 }
 
+.form-container {
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: 1px solid var(--txt-clr);
+    border-radius: 10px;
+}
+.form-card {
+    margin: 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: center;
+    border: 1px solid var(--txt-clr);
+    border-radius: 10px;
+    background-color: lightgray  ;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    padding: .5rem;
+    gap: .5rem;
+}
+
+.form-field input {
+    padding: .5rem;
+    border: 1px solid var(--txt-clr);
+    border-radius: 8px;
+    outline: none;
+}
+
+.complete-field {
+    margin-top: 1rem;
+}
 
 .back-btn {
     display: none;
 }
+
+/*CARD FORM*/
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 16px;
+}
+
+.col-50 {
+    flex: 50%;
+    
+}
+
+.container-form {
+    background-color: #f2f2f2;
+    padding: 5px 20px 15px 20px;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+  }
+  input[type=text] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  label {
+    margin-bottom: 10px;
+    display: block;
+  }

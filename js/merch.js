@@ -53,6 +53,7 @@ itemBtn.forEach(data_btn =>
         itemViewContainer.style.display = 'flex'
         storeContainer.style.display = 'none'
         basketContainer.style.display = 'none'
+        checkoutContainer.style.display = 'none'
         
         id('itemViewImg').innerHTML = `<img src="styles/images/${itemObj.image}" alt="BuenVia Image" class="itm-img-lg">`
         id('itemViewTitle').innerText = itemObj.item
@@ -85,8 +86,8 @@ viewBasketBtn.addEventListener('click', () => {
     storeContainer.style.display = 'none'
     basketContainer.style.display = 'flex'
     basketBackBtn.style.display = 'flex'
-    viewBasketBtn.style.display = 'none'
     searchContainer.style.display = 'none'
+    checkoutContainer.style.display = 'none'
 
     showBasketItems(basket)
 })
@@ -99,6 +100,7 @@ basketBackBtn.addEventListener('click', () => {
     basketBackBtn.style.display = 'none'
     viewBasketBtn.style.display = 'flex'
     searchContainer.style.display = 'flex'
+    checkoutContainer.style.display = 'none'
 })
 
 function calcQuantity(item) {
@@ -168,7 +170,7 @@ checkoutBtn.addEventListener('click', () => {
     storeContainer.style.display = 'none'
     basketContainer.style.display = 'none'
     basketBackBtn.style.display = 'none'
-    viewBasketBtn.style.display = 'none'
+
     searchContainer.style.display = 'none'
     checkoutContainer.style.display = 'flex'
 })
