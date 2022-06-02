@@ -5,6 +5,9 @@ const storeContainer = id('storeContainer')
 const itemViewContainer = id('itemViewContainer')
 const basketContainer = id('basketContainer')
 const searchContainer = id('searchContainer')
+const checkoutContainer = id('checkoutContainer')
+
+const cartQuantity = id('cartQuantity')
 
 const itemViewAddBtn = id('itemViewAddBtn')
 
@@ -15,6 +18,8 @@ const shoppingBasketEl = id('shoppingBasketEl')
 const itemListContainer = id('itemListContainer')
 const numItems = id('numItems')
 const totalPriceItems = id('totalPriceItems')
+
+const checkoutBtn = id('checkoutBtn')
 
 const basket = []
 let quantityBasket
@@ -52,6 +57,7 @@ itemBtn.forEach(data_btn =>
         id('itemViewImg').innerHTML = `<img src="styles/images/${itemObj.image}" alt="BuenVia Image" class="itm-img-lg">`
         id('itemViewTitle').innerText = itemObj.item
         id('itemViewPrice').innerText = itemObj.price
+        id('itemViewDesc').innerText = itemObj.desc
     })
 )
     
@@ -69,6 +75,7 @@ itemViewAddBtn.addEventListener('click', () => {
 
     console.log(basket);
     shoppingBasketEl.innerText = calcQuantity(basket)
+    cartQuantity.classList = 'cart-quantity'
     id('itemViewQuantity').value = '1'
 })
 
@@ -118,13 +125,19 @@ function showBasketItems(item) {
         // console.log(basket.indexOf(item));
         const priceCalc = () => item.price * item.quantity
         const basketHtml = `
-            <div class="item-box">
-                <img src="styles/images/${item.image}" alt="BuenVia Image" class="item-img-sml">
-                <p>${item.item}</p>
-                <p>Quantity: ${item.quantity}</p>
-                <p>Price: £${item.price}</p>
-                <h4>Total: £${priceCalc()}</h4>
-                <button data-btn-remove='${JSON.stringify(item)}'>Remove Item</button>
+            <div class="item-basket-box">
+                <div class="item-basket-img flex-col">
+                    <img src="styles/images/${item.image}" alt="BuenVia Image" class="item-img-sml">
+                </div>
+                <div>
+                    <p>${item.item}</p>
+                    <p>Quantity: ${item.quantity}</p>
+                    <p>Price: £${item.price}</p>
+                    <h4>Total: £${priceCalc()}</h4>
+                </div>
+                <div class="item-basket-btn">
+                    <button class="removeBtn" data-btn-remove='${JSON.stringify(item)}'>Remove Item</button>
+                </div>
             </div>
             `
         itemListContainer.innerHTML += basketHtml
@@ -149,6 +162,16 @@ function resetBasketElements(item) {
     numItems.innerHTML = calcQuantity(basket)
     totalPriceItems.innerHTML = calcTotalPrice(basket)
 }
+
+checkoutBtn.addEventListener('click', () => {
+    itemViewContainer.style.display = 'none'
+    storeContainer.style.display = 'none'
+    basketContainer.style.display = 'none'
+    basketBackBtn.style.display = 'none'
+    viewBasketBtn.style.display = 'none'
+    searchContainer.style.display = 'none'
+    checkoutContainer.style.display = 'flex'
+})
 
 // Helper
 function id(id) {
