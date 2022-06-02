@@ -4,6 +4,7 @@ import { itemsList } from "./merchItems.js"
 const storeContainer = id('storeContainer')
 const itemViewContainer = id('itemViewContainer')
 const basketContainer = id('basketContainer')
+const searchContainer = id('searchContainer')
 
 const itemViewAddBtn = id('itemViewAddBtn')
 
@@ -22,14 +23,13 @@ let quantityBasket
 // Populates the list of items on the main page
 itemsList.forEach(item => {
     const html = `
-    <div class="item-box">
+    <div class="item-box" data-btn-item='${JSON.stringify(item)}'>
         <div class="flex-col">
             <img src="styles/images/${item.image}" alt="BuenVia Image" class="item-img-sml">
         </div>
         <div class="item-details">
             <h2>${item.item}</h2>
             <p>£${item.price}</p>
-        <button data-btn-item='${JSON.stringify(item)}'>Buy</button>
         </div>
     </div>
     `
@@ -44,6 +44,7 @@ itemBtn.forEach(data_btn =>
         basketBackBtn.style.display = 'flex'
         itemObj = JSON.parse(data_btn.dataset.btnItem)
         
+        searchContainer.style.display = 'none'
         itemViewContainer.style.display = 'flex'
         storeContainer.style.display = 'none'
         basketContainer.style.display = 'none'
@@ -73,11 +74,12 @@ itemViewAddBtn.addEventListener('click', () => {
 
 // Show items in basket
 viewBasketBtn.addEventListener('click', () => {
-    viewBasketBtn.style.display = 'none'
-    basketBackBtn.style.display = 'flex'
-    storeContainer.style.display = 'none'
     itemViewContainer.style.display = 'none'
+    storeContainer.style.display = 'none'
     basketContainer.style.display = 'flex'
+    basketBackBtn.style.display = 'flex'
+    viewBasketBtn.style.display = 'none'
+    searchContainer.style.display = 'none'
 
     showBasketItems(basket)
 })
@@ -89,6 +91,7 @@ basketBackBtn.addEventListener('click', () => {
     basketContainer.style.display = 'none'
     basketBackBtn.style.display = 'none'
     viewBasketBtn.style.display = 'flex'
+    searchContainer.style.display = 'flex'
 })
 
 function calcQuantity(item) {

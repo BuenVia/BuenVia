@@ -9,23 +9,19 @@
     <title>BuenVia</title>
 </head>
 <body>
-    
-    <!-- INTRO-->
-    <!-- <div class="intro">
-        <div class="hello-container">
-        <h1>WELCOME TO BUENVIA</h1>
-        <button>Let's begin...</button>
-    </div>
-</div> -->
 
+<!--NAV-->
 <nav>
     <div class="navbar">
-        <img class="nav-logo" alt="BuenVia Logo">
-            <div class="flex-row header">
-                <h2>BuenVia Shop</h2>
-                <p><img src="styles/images/cart.svg" alt="" class="cart" id="cart"> <span id="shoppingBasketEl">0</span> items</p>
-                <button id="viewBasketBtn">View Basket</button>
-            </div>
+        <div class="logo">
+            <img class="nav-logo" alt="BuenVia Logo">
+        </div>
+        <div class="nav-title">
+            <h1>MERCH</h1>
+        </div>
+        <div class="nav-cart">
+            <p class="nav-cart-btn" id="viewBasketBtn"><img src="styles/images/cart.svg" alt="" class="cart" id="cart"> <span id="shoppingBasketEl">0</span> items</p>
+        </div>
     </div>
 </nav>
 
@@ -33,16 +29,21 @@
 <main class="flex-col">
     <div class="width-container flex-col-cont">
 
-        <header>
+        <header class="header">
+            <div class="search-container" id="searchContainer">
+                <input type="text" class="search-input" id="" placeholder="Search...">
+                <button class="btn">GO</button>
+            </div>
             <div>
                 <button class="btn back-btn" id="basketBackBtn">View other items</button>
             </div>
         </header>
         
-        <div id="storeContainer" class="flex-row"></div>
+        <!--STORE CONTAINER-->
+        <div id="storeContainer" class="flex-row store-container"></div>
         
         <!--ITEM VIEW-->
-        <div id="itemViewContainer" class="hidden">
+        <div id="itemViewContainer" class="item-container hidden">
             <div class="flex-col">
                 <div class="flex-col">
                     <span src="" alt="BuenVia Image" class="itm-img-lg" id="itemViewImg">

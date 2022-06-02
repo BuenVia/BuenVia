@@ -1,7 +1,7 @@
 :root {
     --bkg-clr: rgb(255, 255, 255);
-    --nav-clr: rgb(112, 0, 240);
-    --txt-clr: rgb(190, 190, 190);
+    --nav-clr: rgb(255, 255, 255);
+    --txt-clr: rgb(56, 56, 56);
     --cor-ans: rgb(190, 250, 190);
     --inc-ans: rgb(230, 191, 191);
 }
@@ -48,25 +48,57 @@ body {
     background-color: var(--nav-clr);
     border-bottom: 1px solid black;
     position: inherit;
-}
-
-.nav-links {
-    gap: 1rem;
-    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .nav-logo {
 
 }
 
-.nav-links a{
-    text-decoration: none;
-    color: var(--txt-clr);
+.nav-title {
+    font-size: 36px;
 }
 
+.nav-cart {
+    padding: .5rem;
+}
+
+.nav-cart-btn {
+    padding: .5rem;
+    gap: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--txt-clr);
+    cursor: pointer;
+}
+.nav-cart-btn:hover {
+    transition: 300ms;
+    background-color: var(--txt-clr);
+    color: var(--nav-clr);
+}
 /*STORE*/
 .header {
-    gap: 1rem;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-container {
+
+}
+
+.search-input {
+    padding: .5rem;
+    border: 1px solid var(--txt-clr);
+    border-radius: 8px;
+    outline: none;
 }
 
 .cart {
@@ -74,18 +106,32 @@ body {
 }
 
 .store-container {
+    width: 1200px;
+    margin-top: 2rem;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
 }
 
 .item-box {
-    width: 10rem;
-    height: 12rem;
+    width: 15rem;
+    height: 18rem;
     margin: 1rem;
     padding: 1rem;
-    border: 1px solid;
+    border: 1px solid transparent;
     border-radius: 10px;
+    cursor: pointer;
+}
+
+.item-box:hover {
+    transition: 800ms;
+    border: 1px solid;
+    box-shadow: 0 0 8px 5px rgb(141, 141, 141);
+    background-color: rgb(247, 247, 247);
+}
+
+/*ITEM VIEW*/
+.item-container {
+    margin-top: 2rem;
 }
 
 /* .item-img-container {
@@ -93,17 +139,19 @@ body {
 } */
 
 .item-img-sml {
-    height: 100px;
+    height: 200px;
 }
 
 .itm-img-lg {
-    height: 250px;
+    height: 450px;
 }
 
 .item-details {
 
 }
 .item-details h2 {
+    margin-top: 2rem;
+    gap: 2rem;
     font-size: 20px;
 }
 
