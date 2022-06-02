@@ -21,6 +21,10 @@ const totalPriceItems = id('totalPriceItems')
 
 const checkoutBtn = id('checkoutBtn')
 
+const checkoutTotal = id('checkoutTotal')
+const finalCheckoutTotal = id ('finalCheckoutTotal')
+
+
 const basket = []
 let quantityBasket
 
@@ -112,7 +116,6 @@ function calcQuantity(item) {
 }
 
 function calcTotalPrice(item) {
-    let itemTotal = 0
     let totalPrice = 0
     for (let i = 0; i < item.length; i++) {
         totalPrice += item[i].quantity * item[i].price
@@ -120,9 +123,18 @@ function calcTotalPrice(item) {
     return `£${totalPrice.toFixed(2)}`
 }
 
+function calcFinalTotal(item) {
+    let totalPrice = 0
+    for (let i = 0; i < item.length; i++) {
+        totalPrice += item[i].quantity * item[i].price
+    }
+    return (totalPrice + 4.99).toFixed(2)
+}
+
 // Displays the items in the basket
 function showBasketItems(item) {
     resetBasketElements(basket)
+
     item.forEach(item => {
         // console.log(basket.indexOf(item));
         const priceCalc = () => item.price * item.quantity
@@ -159,7 +171,7 @@ function showBasketItems(item) {
 }
 
 // Reset basket elements
-function resetBasketElements(item) {
+function resetBasketElements(item) {    
     itemListContainer.innerHTML = ''
     numItems.innerHTML = calcQuantity(basket)
     totalPriceItems.innerHTML = calcTotalPrice(basket)
@@ -173,6 +185,8 @@ checkoutBtn.addEventListener('click', () => {
 
     searchContainer.style.display = 'none'
     checkoutContainer.style.display = 'flex'
+    checkoutTotal.innerText = calcTotalPrice(basket)
+    finalCheckoutTotal.innerText = calcFinalTotal(basket)
 })
 
 // Helper

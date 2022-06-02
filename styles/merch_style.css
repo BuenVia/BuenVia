@@ -242,7 +242,6 @@ body {
 }
 
 .form-container {
-    width: 100%;
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -253,65 +252,45 @@ body {
 .form-card {
     margin: 1rem;
     padding: 2rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: left;
-    align-items: center;
     border: 1px solid var(--txt-clr);
     border-radius: 10px;
     background-color: lightgray  ;
 }
 
-.form-field {
-    display: flex;
-    flex-direction: column;
-    padding: .5rem;
-    gap: .5rem;
-}
 
-.form-field input {
-    padding: .5rem;
-    border: 1px solid var(--txt-clr);
-    border-radius: 8px;
-    outline: none;
-}
 
-.complete-field {
-    margin-top: 1rem;
-}
-
-.back-btn {
-    display: none;
-}
 
 /*CARD FORM*/
 .row {
     display: flex;
-    flex-wrap: wrap;
-    margin: 0 16px;
+    flex-wrap: nowrap;
+    margin: 0 -16px;
 }
 
 .col-50 {
     flex: 50%;
+    padding: 0 16px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    justify-items: left;
     
 }
 
-.container-form {
-    background-color: #f2f2f2;
-    padding: 5px 20px 15px 20px;
-    border: 1px solid lightgrey;
-    border-radius: 3px;
-  }
-  input[type=text] {
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-  }
-  
-  label {
-    margin-bottom: 10px;
-    display: block;
-  }
+.checkout-input {
+    padding: .5rem;
+}
+
+.check-total {
+    text-align: left;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.back-btn {
+    display: none;
+}
