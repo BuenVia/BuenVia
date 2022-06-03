@@ -3,7 +3,7 @@ const conjugateBtn = id('conjugateBtn')
 const listenBtn = id('listenBtn')
 
 learnBtn.addEventListener('click', () => {
-    window.open('learn.html')
+    window.open('learn_new.html')
 })
 
 // Helper function

@@ -74,34 +74,27 @@ body {
 }
 
 .section {
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 .boldWord {
     font-weight: 900;
-    text-decoration: underline;
-    
+    text-decoration: underline; 
+}
+.imp-word {
+    padding: .25rem;
+    background-color: green;
+    color: white;
 }
 
 .header-lg {
     padding: 1rem 0 1rem;
-    margin: 2rem 0 1rem;
-}
-.header-lg h1 {
-    margin: 0 0 1rem;
-    width: fit-content;
-}
-
-.header-sm {
-    text-transform: uppercase;
-}
-.header-sm h3 {
-    padding: .5rem;
-    margin: 0 0 1rem;
+    margin: 1rem 0 1rem;
     background-color: red;
     color: white;
-
-    width: 100%;
+}
+.header-lg h1 {
+    padding: .5rem;
 }
 
 .text-sm {
@@ -109,6 +102,10 @@ body {
     background-color: white;
     border-top: 3px solid red;
     box-shadow: 0 0 3px 3px rgb(229, 229, 229);
+}
+.text-sm h3 {
+    padding: 0 0 1rem;
+    text-transform: uppercase;
 }
 .text-sm p {
     margin: 0 0 .5rem;
