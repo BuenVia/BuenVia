@@ -13,17 +13,6 @@
     <!--TOP HALF-->
 <div class="heignt-container top-container">
 
-    <!-- <nav>
-        <div class="navbar">
-            <img class="nav-logo" alt="BuenVia Logo">
-            <ul class="nav-links flex-row">
-                <a href="index.html"><li>HOME</li></a>
-                <a href="conjugate.html"><li>LEARN</li></a>
-                <a href="lessons.html"><li>LESSONS</li></a>
-                <a href="merch.html"><li>MERCH</li></a>
-            </ul>
-        </div>
-    </nav> -->
         
         
     <main class="flex-col section-height">
@@ -31,21 +20,43 @@
         <div class="flex-col welcome-container">
             <h2>The best way to practice Spanish verb conjugations</h2>
             <div class="index-btn-container flex-col">
-                <button class="btn index-btn" id="practiceBtn">Practice</button>
-                <button class="btn index-btn" id="learnBtn">Learn</button>
-                <button class="btn index-btn" id="merchBtn">Merch</button>
+                <a href="#intro"><button class="btn index-btn" id="practiceBtn">Begin</button></a>
             </div>
         </div>
         
 </div> <!--END OF TOP CONTAINER-->
     
     <!--BOTTOM HALF-->
-        <div class="heignt-container flex-col">
-            <div class="flex-col">
+        <div class="heignt-container flex-col" id="intro">
+            <div class="flex-col width-cont">
                 <p>BuenVia is a way to practice Spanish verb conjugations.</p>
                 <p>Select your tense, then your verb and then getting conjugating!</p>
+                
+                <div class="flex-row section-container">
+                    <div class="flex-col">
+                        <h2>LEARN</h2>
+                        <button class="btn index-btn" id="learnBtn">Learn</button>
+                    </div>
+                </div>
+
+                <div class="flex-row section-container">
+                    <div class="flex-col">
+                        <h2>CONJUGATE</h2>
+                        <button class="btn index-btn" id="conjugateBtn">Conjugate</button>
+                    </div>
+                </div>
+
+                <div class="flex-row section-container">
+                    <div class="flex-col">
+                        <h2>LISTEN</h2>
+                        <button class="btn index-btn" id="listenBtn">Listen</button>
+                    </div>
+                </div>                    
+
+
             </div>
         </div>
+
     </main>
     
 </body>

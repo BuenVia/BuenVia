@@ -11,6 +11,10 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+
 body {
     color: var(--txt-clr);
     min-height: 100vh;
@@ -31,6 +35,10 @@ body {
     align-items: center;
 }
 
+.col-50 {
+    flex: 50%;
+}
+
 .btn {
     padding: .5rem;
     border: none;
@@ -40,6 +48,17 @@ body {
 
 .hidden {
     display: none;
+}
+
+.width-cont {
+    width: 1200px;
+}
+
+.section-container {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-top: 1px solid var(--txt-clr);
 }
 
 /*NAV*/
@@ -99,6 +118,7 @@ max-width: 1200px;
     background-color: var(--txt-clr);
     color: var(--bkg-clr);
 }
+
 
 /*VERB*/
 .scroll {

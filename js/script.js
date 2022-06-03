@@ -1,19 +1,12 @@
-const practiceBtn = id('practiceBtn')
 const learnBtn = id('learnBtn')
-const merchBtn = id('merchBtn')
-
-practiceBtn.addEventListener('click', () => {
-    window.location.href = "conjugate.html";
-})
+const conjugateBtn = id('conjugateBtn')
+const listenBtn = id('listenBtn')
 
 learnBtn.addEventListener('click', () => {
-    window.location.href = "lessons.html"
+    window.open('learn.html')
 })
 
-merchBtn.addEventListener('click', () => {
-    window.location.href = "merch.html"
-})
-
+// Helper function
 function id(id) {
     return document.getElementById(id)
 }
