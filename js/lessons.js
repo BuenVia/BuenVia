@@ -1,20 +1,13 @@
-const infinitiveTenseContainer = id('infinitiveTenseContainer')
-const presentTenseContainer = id('presentTenseContainer')
+const lessonContainer = document.getElementById('lessonContainer')
 
-const infDivBtn = id('infDivBtn')
-const presDivBtn = id('infDivBtn')
+const links = document.querySelectorAll('[data-link]')
 
-infDivBtn.addEventListener('click', () => {
-    if(infinitiveTenseContainer.style.display === 'block') {
-        infinitiveTenseContainer.style.display = 'none'
-        infDivBtn.innerText = 'Open'
-    } else {
-        infinitiveTenseContainer.style.display = 'block'
-        infDivBtn.innerText = 'Close'
-    }
+links.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault()
+        const linkDisplay = link.dataset.link
+        console.log(linkDisplay );
+        usingVerbs.style.display = 'none'
+        infinitive.style.display = 'block'
+    })
 })
-
-// Helper
-function id(id) {
-    return document.getElementById(id)
-}
