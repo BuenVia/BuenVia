@@ -31,8 +31,8 @@
 
         <header class="header">
             <div class="search-container" id="searchContainer">
-                <input type="text" class="search-input" id="" placeholder="Search...">
-                <button class="btn">GO</button>
+                <input type="text" class="search-input" id="searchInput" placeholder="Search...">
+                <button class="btn" id="searchBtn">GO</button>
             </div>
             <div>
                 <button class="btn back-btn" id="basketBackBtn">View other items</button>
@@ -41,6 +41,8 @@
         
         <!--STORE CONTAINER-->
         <div id="storeContainer" class="flex-row store-container"></div>
+
+        <div id="searchResultContainer"></div>
         
         <!--ITEM VIEW-->
         <div id="itemViewContainer" class="item-container hidden">
@@ -82,46 +84,51 @@
         </div>
 
         <!--CHECKOUT-->
-        <div class="checkout-container" id="checkoutContainer">
+        <div class="checkout-container" id="checkoutContainer">           
             <div class="row">
                     
                     <form action="javascript:void(0)" method="POST" class="form-card">
 
+                        <div class="title">
+                            <h2>Checkout</h2>
+                            <p id="checkoutMessage"></p>
+                        </div>
+
                         <div class="row">
                             <div class="col-50 input-container">
-                                <label for=""   >Email</label>
-                                <input class="checkout-input" type="text" name="" id="">
+                                <label for="">Email</label>
+                                <input class="checkout-input" type="text" name="" id="emailCheck">
                                 <label for="">Name on Card</label>
-                                <input class="checkout-input" type="text" name="" id="">
+                                <input class="checkout-input" type="text" name="" id="cardNameCheck">
                                 <label for="">Card Number</label>
-                                <input class="checkout-input" type="text" name="" id="">
+                                <input class="checkout-input" type="text" name="" id="cardNumCheck">
                                 <div class="row">
                                     <div class="col-50 flex-col">
                                         <label for="">Exp Date</label>
-                                        <input class="checkout-input " type="text">
+                                        <input class="checkout-input " type="text" id="expDateCheck">
                                     </div>
                                     <div class="col-50 flex-col">
                                         <label for="">CCV Number</label>
-                                        <input class="checkout-input" type="text">
+                                        <input class="checkout-input" type="text" id="ccvCheck">
                                     </div>
                                 </div>
                             </div>
 
                             <div class="col-50 input-container">
                                 <label for="">Name</label>
-                                <input class="checkout-input" type="text" name="" id="">
+                                <input class="checkout-input" type="text" name="" id="nameCheck">
                                 <label for="">Address</label>
-                                <input class="checkout-input" type="text" name="" id="">
+                                <input class="checkout-input" type="text" name="" id="addCheck">
                                 <label for="">Town / City</label>
-                                <input class="checkout-input" type="text" name="" id="">
+                                <input class="checkout-input" type="text" name="" id="townCheck">
                                 <div class="row">
                                     <div class="col-50 flex-col">
                                         <label for="">Post Code</label>
-                                        <input class="checkout-input" type="text">
+                                        <input class="checkout-input" type="text" id="pcCheck">
                                     </div>
                                     <div class="col-50 flex-col">
                                         <p>I have read T&Cs</p>
-                                        <input class="checkout-input" type="checkbox">
+                                        <input class="checkout-input" type="checkbox" id="tcCheck">
                                     </div>
                                 </div>
                             </div>
@@ -134,7 +141,7 @@
                         </div>
 
                         <div class="complete-field">
-                                <button class="btn">Complete Order</button>
+                                <button class="btn" id="completeBtn">Complete Order</button>
                         </div> 
 
                     </form>
